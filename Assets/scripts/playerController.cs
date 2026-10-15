@@ -7,6 +7,7 @@ public class playerController : MonoBehaviour
     [SerializeField] private Vector2             _playerDirection;
 
     private Rigidbody2D                          _playerRB2D;
+    private Animator                             _playerAnimator;
     public float                                 _playerSpeed;
 
     private void OnEnable()
@@ -22,11 +23,14 @@ public class playerController : MonoBehaviour
     void Awake()
     {
         _playerControls = new PlayerControls();
+        _playerAnimator = GetComponent<Animator>();
     }
 
     void playerInput()
     {
         _playerDirection = _playerControls.Player.Move.ReadValue<Vector2>();
+
+        _playerAnimator.SetInteger("idTransition",1);
     }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
