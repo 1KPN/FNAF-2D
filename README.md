@@ -33,6 +33,6 @@ Em desenvolvimento.
 - Abra a cena principal em Assets/Scenes e clique em Play.
 
 ## Autores
-[Kauã Patrício](https://github.com/1KPN)
-[Nicolas Consoli](https://github.com/niconsoli)
-[Pedro Renato](https://github.com/Renaltas)
+- [Kauã Patrício](https://github.com/1KPN)
+- [Nicolas Consoli](https://github.com/niconsoli)
+- [Pedro Renato](https://github.com/Renaltas)
