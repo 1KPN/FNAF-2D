@@ -1,0 +1,447 @@
+fileFormatVersion: 2
+guid: 34d4d6428ee56fa43b309d9828d4f50f
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -8626850221615757765
+    second: nightGuard_walkingRight_0
+  - first:
+      213: -4166567665320565917
+    second: nightGuard_walkingRight_1
+  - first:
+      213: -1603437811885156384
+    second: nightGuard_walkingRight_2
+  - first:
+      213: 7366217249392876236
+    second: nightGuard_walkingRight_3
+  - first:
+      213: 4444535830295108239
+    second: nightGuard_walkingRight_4
+  - first:
+      213: -8758775118168811406
+    second: nightGuard_walkingRight_5
+  - first:
+      213: -2189853444801609581
+    second: nightGuard_walkingRight_6
+  - first:
+      213: -8416629908314508053
+    second: nightGuard_walkingRight_7
+  - first:
+      213: 8045869179520840828
+    second: nightGuard_walkingRight_8
+  - first:
+      213: -777083781464001487
+    second: nightGuard_walkingRight_9
+  - first:
+      213: 2225684704870127379
+    second: nightGuard_walkingRight_10
+  - first:
+      213: -8951100142068229003
+    second: nightGuard_walkingRight_11
+  - first:
+      213: -5740260081994263611
+    second: nightGuard_walkingRight_12
+  - first:
+      213: 1796088176955794004
+    second: nightGuard_walkingRight_13
+  - first:
+      213: 3539571549110941924
+    second: nightGuard_walkingRight_14
+  - first:
+      213: -3641988837394920711
+    second: nightGuard_walkingRight_15
+  - first:
+      213: -1172918697869684330
+    second: nightGuard_walkingRight_16
+  - first:
+      213: -4946713377416235604
+    second: nightGuard_walkingRight_17
+  - first:
+      213: -3853288811657851508
+    second: nightGuard_walkingRight_18
+  - first:
+      213: 7237819631711555941
+    second: nightGuard_walkingRight_19
+  - first:
+      213: 4672033900611535659
+    second: nightGuard_walkingRight_20
+  - first:
+      213: -2496252314155064533
+    second: nightGuard_walkingRight_21
+  - first:
+      213: -2586581034944182266
+    second: nightGuard_walkingRight_22
+  - first:
+      213: -5558326062714098432
+    second: nightGuard_walkingRight_23
+  - first:
+      213: 6981589987641631089
+    second: nightGuard_walkingRight_24
+  - first:
+      213: -7173240493196856529
+    second: nightGuard_walkingRight_25
+  - first:
+      213: -7487609534385391421
+    second: nightGuard_walkingRight_26
+  - first:
+      213: -4169252218577969544
+    second: nightGuard_walkingRight_27
+  - first:
+      213: 8817715669505822077
+    second: nightGuard_walkingRight_28
+  - first:
+      213: 7097746830159230870
+    second: nightGuard_walkingRight_29
+  - first:
+      213: 7984958429498058396
+    second: nightGuard_walkingRight_30
+  - first:
+      213: 1416831439749103473
+    second: nightGuard_walkingRight_31
+  - first:
+      213: 453644501649838997
+    second: nightGuard_walkingRight_32
+  - first:
+      213: -6579044783411958232
+    second: nightGuard_walkingRight_33
+  - first:
+      213: -6944584954401395588
+    second: nightGuard_walkingRight_34
+  - first:
+      213: 7583871900577791493
+    second: nightGuard_walkingRight_35
+  - first:
+      213: 2977045750303861362
+    second: nightGuard_walkingRight_36
+  - first:
+      213: -1366819873665373838
+    second: nightGuard_walkingRight_37
+  - first:
+      213: -8564469058699794450
+    second: nightGuard_walkingRight_38
+  - first:
+      213: 3897897053820532941
+    second: nightGuard_walkingRight_39
+  - first:
+      213: 1245101995396211942
+    second: nightGuard_walkingRight_40
+  - first:
+      213: 6873470935413879610
+    second: nightGuard_walkingRight_41
+  - first:
+      213: -5253990078989884916
+    second: nightGuard_walkingRight_42
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationMethod: 0
+  spriteTessellationDetail: -1
+  spriteGeometrySubdivision: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: nightGuard_walkingRight_0
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 0
+        width: 271
+        height: 724
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b36c7123e65474880800000000000000
+      internalID: -8626850221615757765
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nightGuard_walkingRight_1
+      rect:
+        serializedVersion: 2
+        x: 281
+        y: 0
+        width: 271
+        height: 724
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 36360f7a8c06d26c0800000000000000
+      internalID: -4166567665320565917
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nightGuard_walkingRight_2
+      rect:
+        serializedVersion: 2
+        x: 552
+        y: 0
+        width: 271
+        height: 724
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0e7d7233ec17fb9e0800000000000000
+      internalID: -1603437811885156384
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nightGuard_walkingRight_3
+      rect:
+        serializedVersion: 2
+        x: 819
+        y: 0
+        width: 271
+        height: 724
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ccada687f8f0a3660800000000000000
+      internalID: 7366217249392876236
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nightGuard_walkingRight_4
+      rect:
+        serializedVersion: 2
+        x: 1092
+        y: 0
+        width: 271
+        height: 724
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f8a5c3c1ac92ead30800000000000000
+      internalID: 4444535830295108239
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nightGuard_walkingRight_5
+      rect:
+        serializedVersion: 2
+        x: 1363
+        y: 0
+        width: 271
+        height: 724
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 278940e9f64927680800000000000000
+      internalID: -8758775118168811406
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nightGuard_walkingRight_6
+      rect:
+        serializedVersion: 2
+        x: 1638
+        y: 0
+        width: 271
+        height: 724
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3904f60f4e31c91e0800000000000000
+      internalID: -2189853444801609581
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nightGuard_walkingRight_7
+      rect:
+        serializedVersion: 2
+        x: 1907
+        y: 0
+        width: 265
+        height: 724
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: be43cfc01bf123b80800000000000000
+      internalID: -8416629908314508053
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: c3c5ed818fa34f3479ec101f6c904b62
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":8.0,"y":1.0},"gridSpriteSize":{"x":271.0,"y":724.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
+    nameFileIdTable:
+      nightGuard_walkingRight_0: -8626850221615757765
+      nightGuard_walkingRight_1: -4166567665320565917
+      nightGuard_walkingRight_2: -1603437811885156384
+      nightGuard_walkingRight_3: 7366217249392876236
+      nightGuard_walkingRight_4: 4444535830295108239
+      nightGuard_walkingRight_5: -8758775118168811406
+      nightGuard_walkingRight_6: -2189853444801609581
+      nightGuard_walkingRight_7: -8416629908314508053
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -1,0 +1,704 @@
+fileFormatVersion: 2
+guid: dc08336e34e4c894c97f5f3f3237f6a4
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 719038212388555733
+    second: chicaChicken_walkingSouth_0
+  - first:
+      213: -314394394396524011
+    second: chicaChicken_walkingSouth_1
+  - first:
+      213: 6883851980920857808
+    second: chicaChicken_walkingSouth_2
+  - first:
+      213: -211971291535791593
+    second: chicaChicken_walkingSouth_3
+  - first:
+      213: 4467545413252528543
+    second: chicaChicken_walkingSouth_4
+  - first:
+      213: -1253930582216884132
+    second: chicaChicken_walkingSouth_5
+  - first:
+      213: 5341806137707842838
+    second: chicaChicken_walkingSouth_6
+  - first:
+      213: -3994307151632432430
+    second: chicaChicken_walkingSouth_7
+  - first:
+      213: 1366114088525149264
+    second: chicaChicken_walkingSouth_8
+  - first:
+      213: 3154893579234123900
+    second: chicaChicken_walkingSouth_9
+  - first:
+      213: 6099294061198905024
+    second: chicaChicken_walkingSouth_10
+  - first:
+      213: 4803336664116483334
+    second: chicaChicken_walkingSouth_11
+  - first:
+      213: -7737105684311462841
+    second: chicaChicken_walkingSouth_12
+  - first:
+      213: -8877112488628416379
+    second: chicaChicken_walkingSouth_13
+  - first:
+      213: -5833677815628179374
+    second: chicaChicken_walkingSouth_14
+  - first:
+      213: 6851223219412395437
+    second: chicaChicken_walkingSouth_15
+  - first:
+      213: -4843069255768867884
+    second: chicaChicken_walkingSouth_16
+  - first:
+      213: 3412579950640463661
+    second: chicaChicken_walkingSouth_17
+  - first:
+      213: -1853032533616765894
+    second: chicaChicken_walkingSouth_18
+  - first:
+      213: -2551877676332128534
+    second: chicaChicken_walkingSouth_19
+  - first:
+      213: -8836344151476666947
+    second: chicaChicken_walkingSouth_20
+  - first:
+      213: -1399141497826720193
+    second: chicaChicken_walkingSouth_21
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationMethod: 0
+  spriteTessellationDetail: -1
+  spriteGeometrySubdivision: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: chicaChicken_walkingSouth_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 153
+        height: 244
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5db0a5dc1798af900800000000000000
+      internalID: 719038212388555733
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: chicaChicken_walkingSouth_1
+      rect:
+        serializedVersion: 2
+        x: 150
+        y: 0
+        width: 321
+        height: 244
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5120f9ac6fb03abf0800000000000000
+      internalID: -314394394396524011
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: chicaChicken_walkingSouth_2
+      rect:
+        serializedVersion: 2
+        x: 470
+        y: 0
+        width: 169
+        height: 244
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0d4282987ea588f50800000000000000
+      internalID: 6883851980920857808
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: chicaChicken_walkingSouth_3
+      rect:
+        serializedVersion: 2
+        x: 628
+        y: 0
+        width: 165
+        height: 244
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 71aad61cb3dee0df0800000000000000
+      internalID: -211971291535791593
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: chicaChicken_walkingSouth_4
+      rect:
+        serializedVersion: 2
+        x: 802
+        y: 0
+        width: 159
+        height: 244
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f99b7de12e8effd30800000000000000
+      internalID: 4467545413252528543
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: chicaChicken_walkingSouth_5
+      rect:
+        serializedVersion: 2
+        x: 956
+        y: 225
+        width: 17
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c50c6f177c4299ee0800000000000000
+      internalID: -1253930582216884132
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: chicaChicken_walkingSouth_6
+      rect:
+        serializedVersion: 2
+        x: 964
+        y: 0
+        width: 153
+        height: 244
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 61dc3115168e12a40800000000000000
+      internalID: 5341806137707842838
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: chicaChicken_walkingSouth_7
+      rect:
+        serializedVersion: 2
+        x: 1108
+        y: 224
+        width: 17
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2d2852feece5198c0800000000000000
+      internalID: -3994307151632432430
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: chicaChicken_walkingSouth_8
+      rect:
+        serializedVersion: 2
+        x: 1112
+        y: 0
+        width: 160
+        height: 244
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 054b239868965f210800000000000000
+      internalID: 1366114088525149264
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: chicaChicken_walkingSouth_9
+      rect:
+        serializedVersion: 2
+        x: 780
+        y: 207
+        width: 19
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c702966befe68cb20800000000000000
+      internalID: 3154893579234123900
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: chicaChicken_walkingSouth_10
+      rect:
+        serializedVersion: 2
+        x: 921
+        y: 191
+        width: 42
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0ce096a12ab05a450800000000000000
+      internalID: 6099294061198905024
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: chicaChicken_walkingSouth_11
+      rect:
+        serializedVersion: 2
+        x: 124
+        y: 166
+        width: 37
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 605d5413f31e8a240800000000000000
+      internalID: 4803336664116483334
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: chicaChicken_walkingSouth_12
+      rect:
+        serializedVersion: 2
+        x: 790
+        y: 153
+        width: 23
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 74ca5f08f5740a490800000000000000
+      internalID: -7737105684311462841
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: chicaChicken_walkingSouth_13
+      rect:
+        serializedVersion: 2
+        x: 934
+        y: 173
+        width: 17
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5809e1c79392ec480800000000000000
+      internalID: -8877112488628416379
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: chicaChicken_walkingSouth_14
+      rect:
+        serializedVersion: 2
+        x: 1102
+        y: 155
+        width: 31
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 258d7615fec9a0fa0800000000000000
+      internalID: -5833677815628179374
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: chicaChicken_walkingSouth_15
+      rect:
+        serializedVersion: 2
+        x: 468
+        y: 149
+        width: 11
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: da5ebfdf73f641f50800000000000000
+      internalID: 6851223219412395437
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: chicaChicken_walkingSouth_16
+      rect:
+        serializedVersion: 2
+        x: 468
+        y: 137
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4dbf74beb26f9ccb0800000000000000
+      internalID: -4843069255768867884
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: chicaChicken_walkingSouth_17
+      rect:
+        serializedVersion: 2
+        x: 460
+        y: 27
+        width: 27
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d2f7b8d626beb5f20800000000000000
+      internalID: 3412579950640463661
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: chicaChicken_walkingSouth_18
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 19
+        width: 25
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a34d78c7ab4b846e0800000000000000
+      internalID: -1853032533616765894
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: chicaChicken_walkingSouth_19
+      rect:
+        serializedVersion: 2
+        x: 788
+        y: 29
+        width: 13
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ae669f716c8e59cd0800000000000000
+      internalID: -2551877676332128534
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: chicaChicken_walkingSouth_20
+      rect:
+        serializedVersion: 2
+        x: 790
+        y: 15
+        width: 9
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dbdf12aafcffe5580800000000000000
+      internalID: -8836344151476666947
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: chicaChicken_walkingSouth_21
+      rect:
+        serializedVersion: 2
+        x: 952
+        y: 0
+        width: 21
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f36c78f7830459ce0800000000000000
+      internalID: -1399141497826720193
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      chicaChicken_walkingSouth_0: 719038212388555733
+      chicaChicken_walkingSouth_1: -314394394396524011
+      chicaChicken_walkingSouth_10: 6099294061198905024
+      chicaChicken_walkingSouth_11: 4803336664116483334
+      chicaChicken_walkingSouth_12: -7737105684311462841
+      chicaChicken_walkingSouth_13: -8877112488628416379
+      chicaChicken_walkingSouth_14: -5833677815628179374
+      chicaChicken_walkingSouth_15: 6851223219412395437
+      chicaChicken_walkingSouth_16: -4843069255768867884
+      chicaChicken_walkingSouth_17: 3412579950640463661
+      chicaChicken_walkingSouth_18: -1853032533616765894
+      chicaChicken_walkingSouth_19: -2551877676332128534
+      chicaChicken_walkingSouth_2: 6883851980920857808
+      chicaChicken_walkingSouth_20: -8836344151476666947
+      chicaChicken_walkingSouth_21: -1399141497826720193
+      chicaChicken_walkingSouth_3: -211971291535791593
+      chicaChicken_walkingSouth_4: 4467545413252528543
+      chicaChicken_walkingSouth_5: -1253930582216884132
+      chicaChicken_walkingSouth_6: 5341806137707842838
+      chicaChicken_walkingSouth_7: -3994307151632432430
+      chicaChicken_walkingSouth_8: 1366114088525149264
+      chicaChicken_walkingSouth_9: 3154893579234123900
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

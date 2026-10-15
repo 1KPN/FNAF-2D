@@ -50,4 +50,5 @@ public class playerController : MonoBehaviour
     {
         _playerRB2D.MovePosition(_playerRB2D.position + _playerDirection * (_playerSpeed * Time.deltaTime));
     }
+
 }

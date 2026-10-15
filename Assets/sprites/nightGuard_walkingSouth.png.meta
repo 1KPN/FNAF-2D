@@ -1,0 +1,669 @@
+fileFormatVersion: 2
+guid: 8911ca3663135b047aff69670115a884
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 7442500851839307491
+    second: nightGuard_walkingSouth_0
+  - first:
+      213: 8090999669727849720
+    second: nightGuard_walkingSouth_1
+  - first:
+      213: -7764604807414475601
+    second: nightGuard_walkingSouth_2
+  - first:
+      213: 6732058415220919051
+    second: nightGuard_walkingSouth_3
+  - first:
+      213: -3134682777819191343
+    second: nightGuard_walkingSouth_4
+  - first:
+      213: 7298822267486004408
+    second: nightGuard_walkingSouth_5
+  - first:
+      213: 6686234309942717976
+    second: nightGuard_walkingSouth_6
+  - first:
+      213: 2456733427318571423
+    second: nightGuard_walkingSouth_7
+  - first:
+      213: 5830510977307792263
+    second: nightGuard_walkingSouth_8
+  - first:
+      213: 5347337810912475444
+    second: nightGuard_walkingSouth_9
+  - first:
+      213: 3451680040354710733
+    second: nightGuard_walkingSouth_10
+  - first:
+      213: 6907541635664178221
+    second: nightGuard_walkingSouth_11
+  - first:
+      213: 3935930948154175835
+    second: nightGuard_walkingSouth_12
+  - first:
+      213: 6578055078087585352
+    second: nightGuard_walkingSouth_13
+  - first:
+      213: 135811703945048294
+    second: nightGuard_walkingSouth_14
+  - first:
+      213: -6035309202599882341
+    second: nightGuard_walkingSouth_15
+  - first:
+      213: 2090624583650989894
+    second: nightGuard_walkingSouth_16
+  - first:
+      213: 6145564359115769150
+    second: nightGuard_walkingSouth_17
+  - first:
+      213: 40635765737426118
+    second: nightGuard_walkingSouth_18
+  - first:
+      213: 6516067243457877129
+    second: nightGuard_walkingSouth_19
+  - first:
+      213: -6652231058682197681
+    second: nightGuard_walkingSouth_20
+  - first:
+      213: 6412046161950802818
+    second: nightGuard_walkingSouth_21
+  - first:
+      213: 5926129855305098758
+    second: nightGuard_walkingSouth_22
+  - first:
+      213: 6821003900278520756
+    second: nightGuard_walkingSouth_23
+  - first:
+      213: 3161940132689020743
+    second: nightGuard_walkingSouth_24
+  - first:
+      213: 3776880322316243556
+    second: nightGuard_walkingSouth_25
+  - first:
+      213: 6618743543453024646
+    second: nightGuard_walkingSouth_26
+  - first:
+      213: 1421299009419865145
+    second: nightGuard_walkingSouth_27
+  - first:
+      213: 3517344519930026062
+    second: nightGuard_walkingSouth_28
+  - first:
+      213: 5623030325425013388
+    second: nightGuard_walkingSouth_29
+  - first:
+      213: 5195073576438167375
+    second: nightGuard_walkingSouth_30
+  - first:
+      213: 572383950182913464
+    second: nightGuard_walkingSouth_31
+  - first:
+      213: -2287649830981642761
+    second: nightGuard_walkingSouth_32
+  - first:
+      213: 2816247333011107817
+    second: nightGuard_walkingSouth_33
+  - first:
+      213: 8748046146508574571
+    second: nightGuard_walkingSouth_34
+  - first:
+      213: -6146869718014496050
+    second: nightGuard_walkingSouth_35
+  - first:
+      213: 4911801293231239300
+    second: nightGuard_walkingSouth_36
+  - first:
+      213: 7682137085701060937
+    second: nightGuard_walkingSouth_37
+  - first:
+      213: -6962034075244847029
+    second: nightGuard_walkingSouth_38
+  - first:
+      213: -270652024323029647
+    second: nightGuard_walkingSouth_39
+  - first:
+      213: 7878342827036040717
+    second: nightGuard_walkingSouth_40
+  - first:
+      213: -8214039415135725898
+    second: nightGuard_walkingSouth_41
+  - first:
+      213: -3997929677133225075
+    second: nightGuard_walkingSouth_42
+  - first:
+      213: 1623807808504807571
+    second: nightGuard_walkingSouth_43
+  - first:
+      213: -1421719248208880617
+    second: nightGuard_walkingSouth_44
+  - first:
+      213: -3125061680172892380
+    second: nightGuard_walkingSouth_45
+  - first:
+      213: 8206071984628250815
+    second: nightGuard_walkingSouth_46
+  - first:
+      213: -4417456017456680015
+    second: nightGuard_walkingSouth_47
+  - first:
+      213: 7844675426103671659
+    second: nightGuard_walkingSouth_48
+  - first:
+      213: 8842669317702878487
+    second: nightGuard_walkingSouth_49
+  - first:
+      213: -5683378968546061530
+    second: nightGuard_walkingSouth_50
+  - first:
+      213: 2344791762737071095
+    second: nightGuard_walkingSouth_51
+  - first:
+      213: 4273864587326306873
+    second: nightGuard_walkingSouth_52
+  - first:
+      213: 5167338630976284042
+    second: nightGuard_walkingSouth_53
+  - first:
+      213: 5403314495499049774
+    second: nightGuard_walkingSouth_54
+  - first:
+      213: -8802473331289549217
+    second: nightGuard_walkingSouth_55
+  - first:
+      213: -1907022876267390892
+    second: nightGuard_walkingSouth_56
+  - first:
+      213: 5380695184655636466
+    second: nightGuard_walkingSouth_57
+  - first:
+      213: 832210147289148376
+    second: nightGuard_walkingSouth_58
+  - first:
+      213: 7098915582235019804
+    second: nightGuard_walkingSouth_59
+  - first:
+      213: -2868648896653159239
+    second: nightGuard_walkingSouth_60
+  - first:
+      213: 942867085775477655
+    second: nightGuard_walkingSouth_61
+  - first:
+      213: 5668507176910922785
+    second: nightGuard_walkingSouth_62
+  - first:
+      213: 138683332563258021
+    second: nightGuard_walkingSouth_63
+  - first:
+      213: -7370932450896284249
+    second: nightGuard_walkingSouth_64
+  - first:
+      213: 7851942248883372413
+    second: nightGuard_walkingSouth_65
+  - first:
+      213: 9031117719498820114
+    second: nightGuard_walkingSouth_66
+  - first:
+      213: 853905793428472470
+    second: nightGuard_walkingSouth_67
+  - first:
+      213: 8240135654104079998
+    second: nightGuard_walkingSouth_68
+  - first:
+      213: -4879883917954522760
+    second: nightGuard_walkingSouth_69
+  - first:
+      213: 3432645862981368525
+    second: nightGuard_walkingSouth_70
+  - first:
+      213: 3994867719644625232
+    second: nightGuard_walkingSouth_71
+  - first:
+      213: 3142674790065555690
+    second: nightGuard_walkingSouth_72
+  - first:
+      213: 1114905605399989995
+    second: nightGuard_walkingSouth_73
+  - first:
+      213: -4267495384892594371
+    second: nightGuard_walkingSouth_74
+  - first:
+      213: 1983607146320074063
+    second: nightGuard_walkingSouth_75
+  - first:
+      213: -6915212872800982555
+    second: nightGuard_walkingSouth_76
+  - first:
+      213: -4783444350223275991
+    second: nightGuard_walkingSouth_77
+  - first:
+      213: 277148259809489485
+    second: nightGuard_walkingSouth_78
+  - first:
+      213: 5793159126635282685
+    second: nightGuard_walkingSouth_79
+  - first:
+      213: -8906963969701353145
+    second: nightGuard_walkingSouth_80
+  - first:
+      213: 8297611747230518418
+    second: nightGuard_walkingSouth_81
+  - first:
+      213: 6145953608583989376
+    second: nightGuard_walkingSouth_82
+  - first:
+      213: 5855437189719401979
+    second: nightGuard_walkingSouth_83
+  - first:
+      213: 3748914355636588187
+    second: nightGuard_walkingSouth_84
+  - first:
+      213: 7282035105847894080
+    second: nightGuard_walkingSouth_85
+  - first:
+      213: 582316428186367571
+    second: nightGuard_walkingSouth_86
+  - first:
+      213: -4282795387863121933
+    second: nightGuard_walkingSouth_87
+  - first:
+      213: 2257889799850801668
+    second: nightGuard_walkingSouth_88
+  - first:
+      213: 1513608834485462540
+    second: nightGuard_walkingSouth_89
+  - first:
+      213: -3917023253510907603
+    second: nightGuard_walkingSouth_90
+  - first:
+      213: -3167564164124021666
+    second: nightGuard_walkingSouth_91
+  - first:
+      213: -3628462471805888580
+    second: nightGuard_walkingSouth_92
+  - first:
+      213: -3915700851583481023
+    second: nightGuard_walkingSouth_93
+  - first:
+      213: -3413894978008214613
+    second: nightGuard_walkingSouth_94
+  - first:
+      213: 4832723884255493299
+    second: nightGuard_walkingSouth_95
+  - first:
+      213: -3257464472248295118
+    second: nightGuard_walkingSouth_96
+  - first:
+      213: -3045691371710239029
+    second: nightGuard_walkingSouth_97
+  - first:
+      213: 2426283013978052559
+    second: nightGuard_walkingSouth_98
+  - first:
+      213: 8948452642574900030
+    second: nightGuard_walkingSouth_99
+  - first:
+      213: 6150001477618321264
+    second: nightGuard_walkingSouth_100
+  - first:
+      213: -2837428319284051416
+    second: nightGuard_walkingSouth_101
+  - first:
+      213: 5545694568802377763
+    second: nightGuard_walkingSouth_102
+  - first:
+      213: -2570293595169932199
+    second: nightGuard_walkingSouth_103
+  - first:
+      213: -3894737761070192464
+    second: nightGuard_walkingSouth_104
+  - first:
+      213: 5004502262313468297
+    second: nightGuard_walkingSouth_105
+  - first:
+      213: -6062877885509846583
+    second: nightGuard_walkingSouth_106
+  - first:
+      213: 2536453459031023007
+    second: nightGuard_walkingSouth_107
+  - first:
+      213: -4550212658863193638
+    second: nightGuard_walkingSouth_108
+  - first:
+      213: 2830062530205947578
+    second: nightGuard_walkingSouth_109
+  - first:
+      213: 2962743906141139489
+    second: nightGuard_walkingSouth_110
+  - first:
+      213: 672073077228748386
+    second: nightGuard_walkingSouth_111
+  - first:
+      213: -8538899797829473496
+    second: nightGuard_walkingSouth_112
+  - first:
+      213: -6704526272176157893
+    second: nightGuard_walkingSouth_113
+  - first:
+      213: -671516834774644597
+    second: nightGuard_walkingSouth_114
+  - first:
+      213: 6866546458028440335
+    second: nightGuard_walkingSouth_115
+  - first:
+      213: 8394165761800365853
+    second: nightGuard_walkingSouth_116
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationMethod: 0
+  spriteTessellationDetail: -1
+  spriteGeometrySubdivision: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: nightGuard_walkingSouth_0
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 0
+        width: 271
+        height: 724
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3ee8c6ab713194760800000000000000
+      internalID: 7442500851839307491
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nightGuard_walkingSouth_1
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 0
+        width: 271
+        height: 724
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8fc6ee7e451094070800000000000000
+      internalID: 8090999669727849720
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nightGuard_walkingSouth_2
+      rect:
+        serializedVersion: 2
+        x: 565
+        y: 0
+        width: 271
+        height: 724
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fa415c8f0159e3490800000000000000
+      internalID: -7764604807414475601
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nightGuard_walkingSouth_3
+      rect:
+        serializedVersion: 2
+        x: 826
+        y: 0
+        width: 271
+        height: 724
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b0b0c6ee5731d6d50800000000000000
+      internalID: 6732058415220919051
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nightGuard_walkingSouth_4
+      rect:
+        serializedVersion: 2
+        x: 1090
+        y: 0
+        width: 271
+        height: 724
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1d76d803f9e5f74d0800000000000000
+      internalID: -3134682777819191343
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nightGuard_walkingSouth_5
+      rect:
+        serializedVersion: 2
+        x: 1353
+        y: 0
+        width: 271
+        height: 724
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8b4e6347e20aa4560800000000000000
+      internalID: 7298822267486004408
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nightGuard_walkingSouth_6
+      rect:
+        serializedVersion: 2
+        x: 1616
+        y: 0
+        width: 271
+        height: 724
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 81e2a210ea64acc50800000000000000
+      internalID: 6686234309942717976
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nightGuard_walkingSouth_7
+      rect:
+        serializedVersion: 2
+        x: 1884
+        y: 0
+        width: 271
+        height: 724
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f91c62b2902181220800000000000000
+      internalID: 2456733427318571423
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: fc725afae08467e4b9efe27afcf71379
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":8.0,"y":1.0},"gridSpriteSize":{"x":271.0,"y":724.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
+    nameFileIdTable:
+      nightGuard_walkingSouth_0: 7442500851839307491
+      nightGuard_walkingSouth_1: 8090999669727849720
+      nightGuard_walkingSouth_2: -7764604807414475601
+      nightGuard_walkingSouth_3: 6732058415220919051
+      nightGuard_walkingSouth_4: -3134682777819191343
+      nightGuard_walkingSouth_5: 7298822267486004408
+      nightGuard_walkingSouth_6: 6686234309942717976
+      nightGuard_walkingSouth_7: 2456733427318571423
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -1,0 +1,522 @@
+fileFormatVersion: 2
+guid: ca24df0d47ea0c947b0c9b222c329b89
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 6618863253075687964
+    second: freddyFazbear_walkingRight_0
+  - first:
+      213: 806352128414036803
+    second: freddyFazbear_walkingRight_1
+  - first:
+      213: -6954006684469829107
+    second: freddyFazbear_walkingRight_2
+  - first:
+      213: -5464438029313749809
+    second: freddyFazbear_walkingRight_3
+  - first:
+      213: 4345157533330995391
+    second: freddyFazbear_walkingRight_4
+  - first:
+      213: -7183700193925985225
+    second: freddyFazbear_walkingRight_5
+  - first:
+      213: 2383339568013484897
+    second: freddyFazbear_walkingRight_6
+  - first:
+      213: 918238801389801805
+    second: freddyFazbear_walkingRight_7
+  - first:
+      213: -6548174222453624384
+    second: freddyFazbear_walkingRight_8
+  - first:
+      213: 3041643343574695911
+    second: freddyFazbear_walkingRight_9
+  - first:
+      213: 3962105202546319533
+    second: freddyFazbear_walkingRight_10
+  - first:
+      213: 4759533502045373808
+    second: freddyFazbear_walkingRight_11
+  - first:
+      213: 4654457426267785888
+    second: freddyFazbear_walkingRight_12
+  - first:
+      213: 4587950061525147129
+    second: freddyFazbear_walkingRight_13
+  - first:
+      213: -8337891940524768410
+    second: freddyFazbear_walkingRight_14
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationMethod: 0
+  spriteTessellationDetail: -1
+  spriteGeometrySubdivision: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: freddyFazbear_walkingRight_0
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 0
+        width: 161
+        height: 241
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c1a76787f0deadb50800000000000000
+      internalID: 6618863253075687964
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: freddyFazbear_walkingRight_1
+      rect:
+        serializedVersion: 2
+        x: 171
+        y: 0
+        width: 147
+        height: 241
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 343bff11dfcb03b00800000000000000
+      internalID: 806352128414036803
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: freddyFazbear_walkingRight_2
+      rect:
+        serializedVersion: 2
+        x: 315
+        y: 222
+        width: 21
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d02eb7ea3c76e7f90800000000000000
+      internalID: -6954006684469829107
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: freddyFazbear_walkingRight_3
+      rect:
+        serializedVersion: 2
+        x: 321
+        y: 0
+        width: 151
+        height: 241
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fcc4e9d609a6a24b0800000000000000
+      internalID: -5464438029313749809
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: freddyFazbear_walkingRight_4
+      rect:
+        serializedVersion: 2
+        x: 471
+        y: 0
+        width: 169
+        height: 241
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fb87e4341c91d4c30800000000000000
+      internalID: 4345157533330995391
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: freddyFazbear_walkingRight_5
+      rect:
+        serializedVersion: 2
+        x: 479
+        y: 228
+        width: 11
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 73c03280cbe5e4c90800000000000000
+      internalID: -7183700193925985225
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: freddyFazbear_walkingRight_6
+      rect:
+        serializedVersion: 2
+        x: 637
+        y: 225
+        width: 11
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 163a39aa5b2531120800000000000000
+      internalID: 2383339568013484897
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: freddyFazbear_walkingRight_7
+      rect:
+        serializedVersion: 2
+        x: 639
+        y: 0
+        width: 150
+        height: 241
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d41d1d7235d3ebc00800000000000000
+      internalID: 918238801389801805
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: freddyFazbear_walkingRight_8
+      rect:
+        serializedVersion: 2
+        x: 793
+        y: 0
+        width: 145
+        height: 241
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0c138470d363025a0800000000000000
+      internalID: -6548174222453624384
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: freddyFazbear_walkingRight_9
+      rect:
+        serializedVersion: 2
+        x: 953
+        y: 0
+        width: 143
+        height: 241
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7ef73337186163a20800000000000000
+      internalID: 3041643343574695911
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: freddyFazbear_walkingRight_10
+      rect:
+        serializedVersion: 2
+        x: 1101
+        y: 0
+        width: 171
+        height: 241
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: da0208880b93cf630800000000000000
+      internalID: 3962105202546319533
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: freddyFazbear_walkingRight_11
+      rect:
+        serializedVersion: 2
+        x: 165
+        y: 128
+        width: 11
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0754cf5c0824d0240800000000000000
+      internalID: 4759533502045373808
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: freddyFazbear_walkingRight_12
+      rect:
+        serializedVersion: 2
+        x: 623
+        y: 108
+        width: 21
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0aaceda6e54f79040800000000000000
+      internalID: 4654457426267785888
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: freddyFazbear_walkingRight_13
+      rect:
+        serializedVersion: 2
+        x: 785
+        y: 116
+        width: 33
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9fd1070e54cabaf30800000000000000
+      internalID: 4587950061525147129
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: freddyFazbear_walkingRight_14
+      rect:
+        serializedVersion: 2
+        x: 935
+        y: 17
+        width: 8
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 663cd65c47bd94c80800000000000000
+      internalID: -8337891940524768410
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      freddyFazbear_walkingRight_0: 6618863253075687964
+      freddyFazbear_walkingRight_1: 806352128414036803
+      freddyFazbear_walkingRight_10: 3962105202546319533
+      freddyFazbear_walkingRight_11: 4759533502045373808
+      freddyFazbear_walkingRight_12: 4654457426267785888
+      freddyFazbear_walkingRight_13: 4587950061525147129
+      freddyFazbear_walkingRight_14: -8337891940524768410
+      freddyFazbear_walkingRight_2: -6954006684469829107
+      freddyFazbear_walkingRight_3: -5464438029313749809
+      freddyFazbear_walkingRight_4: 4345157533330995391
+      freddyFazbear_walkingRight_5: -7183700193925985225
+      freddyFazbear_walkingRight_6: 2383339568013484897
+      freddyFazbear_walkingRight_7: 918238801389801805
+      freddyFazbear_walkingRight_8: -6548174222453624384
+      freddyFazbear_walkingRight_9: 3041643343574695911
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

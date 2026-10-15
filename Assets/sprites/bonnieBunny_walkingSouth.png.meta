@@ -1,0 +1,418 @@
+fileFormatVersion: 2
+guid: 7dc76002482ee374f88a42c1aca43500
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -4750752752568883766
+    second: bonnieBunny_walkingSouth_0
+  - first:
+      213: 8882917311409089142
+    second: bonnieBunny_walkingSouth_1
+  - first:
+      213: -6168883768079671553
+    second: bonnieBunny_walkingSouth_2
+  - first:
+      213: -7017791921889196389
+    second: bonnieBunny_walkingSouth_3
+  - first:
+      213: -4785859716611569574
+    second: bonnieBunny_walkingSouth_4
+  - first:
+      213: 3471891643850627632
+    second: bonnieBunny_walkingSouth_5
+  - first:
+      213: -7615735770770229210
+    second: bonnieBunny_walkingSouth_6
+  - first:
+      213: 545237822201246222
+    second: bonnieBunny_walkingSouth_7
+  - first:
+      213: -2546763286799250170
+    second: bonnieBunny_walkingSouth_8
+  - first:
+      213: 6889999895484622933
+    second: bonnieBunny_walkingSouth_9
+  - first:
+      213: 8589908457168107896
+    second: bonnieBunny_walkingSouth_10
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationMethod: 0
+  spriteTessellationDetail: -1
+  spriteGeometrySubdivision: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: bonnieBunny_walkingSouth_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 151
+        height: 258
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ac52c67ca8fe11eb0800000000000000
+      internalID: -4750752752568883766
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bonnieBunny_walkingSouth_1
+      rect:
+        serializedVersion: 2
+        x: 163
+        y: 0
+        width: 153
+        height: 258
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 67ae4b32b36764b70800000000000000
+      internalID: 8882917311409089142
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bonnieBunny_walkingSouth_2
+      rect:
+        serializedVersion: 2
+        x: 319
+        y: 0
+        width: 159
+        height: 258
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ffe10f6a5e8b36aa0800000000000000
+      internalID: -6168883768079671553
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bonnieBunny_walkingSouth_3
+      rect:
+        serializedVersion: 2
+        x: 479
+        y: 0
+        width: 151
+        height: 258
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b96403ccd6bcb9e90800000000000000
+      internalID: -7017791921889196389
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bonnieBunny_walkingSouth_4
+      rect:
+        serializedVersion: 2
+        x: 635
+        y: 0
+        width: 155
+        height: 258
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a58048eb1f5359db0800000000000000
+      internalID: -4785859716611569574
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bonnieBunny_walkingSouth_5
+      rect:
+        serializedVersion: 2
+        x: 801
+        y: 0
+        width: 161
+        height: 258
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 03a1d522e03ae2030800000000000000
+      internalID: 3471891643850627632
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bonnieBunny_walkingSouth_6
+      rect:
+        serializedVersion: 2
+        x: 961
+        y: 0
+        width: 151
+        height: 258
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 62831089aa87f4690800000000000000
+      internalID: -7615735770770229210
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bonnieBunny_walkingSouth_7
+      rect:
+        serializedVersion: 2
+        x: 1107
+        y: 217
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e02b96619e2119700800000000000000
+      internalID: 545237822201246222
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bonnieBunny_walkingSouth_8
+      rect:
+        serializedVersion: 2
+        x: 1113
+        y: 0
+        width: 157
+        height: 258
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 60d0353b84418acd0800000000000000
+      internalID: -2546763286799250170
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bonnieBunny_walkingSouth_9
+      rect:
+        serializedVersion: 2
+        x: 777
+        y: 167
+        width: 21
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 558e6d076623e9f50800000000000000
+      internalID: 6889999895484622933
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bonnieBunny_walkingSouth_10
+      rect:
+        serializedVersion: 2
+        x: 947
+        y: 24
+        width: 14
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 879f0a20b3c753770800000000000000
+      internalID: 8589908457168107896
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      bonnieBunny_walkingSouth_0: -4750752752568883766
+      bonnieBunny_walkingSouth_1: 8882917311409089142
+      bonnieBunny_walkingSouth_10: 8589908457168107896
+      bonnieBunny_walkingSouth_2: -6168883768079671553
+      bonnieBunny_walkingSouth_3: -7017791921889196389
+      bonnieBunny_walkingSouth_4: -4785859716611569574
+      bonnieBunny_walkingSouth_5: 3471891643850627632
+      bonnieBunny_walkingSouth_6: -7615735770770229210
+      bonnieBunny_walkingSouth_7: 545237822201246222
+      bonnieBunny_walkingSouth_8: -2546763286799250170
+      bonnieBunny_walkingSouth_9: 6889999895484622933
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
