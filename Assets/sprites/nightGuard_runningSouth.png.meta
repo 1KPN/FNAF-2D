@@ -1,0 +1,561 @@
+fileFormatVersion: 2
+guid: 55edca4add01dd148aa4b5fa40d67a5b
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -590720551867301773
+    second: nightGuard_runningSouth_0
+  - first:
+      213: -4516909048624890734
+    second: nightGuard_runningSouth_1
+  - first:
+      213: -3077007887576162648
+    second: nightGuard_runningSouth_2
+  - first:
+      213: 3011471095122756107
+    second: nightGuard_runningSouth_3
+  - first:
+      213: -7032955601983736131
+    second: nightGuard_runningSouth_4
+  - first:
+      213: 2616087163313298761
+    second: nightGuard_runningSouth_5
+  - first:
+      213: 3341043526721322092
+    second: nightGuard_runningSouth_6
+  - first:
+      213: -8202894863710091483
+    second: nightGuard_runningSouth_7
+  - first:
+      213: -5080252643487471770
+    second: nightGuard_runningSouth_8
+  - first:
+      213: 1554594072375536754
+    second: nightGuard_runningSouth_9
+  - first:
+      213: -8822744392269893393
+    second: nightGuard_runningSouth_10
+  - first:
+      213: -6685301013320423949
+    second: nightGuard_runningSouth_11
+  - first:
+      213: 5002655788805902112
+    second: nightGuard_runningSouth_12
+  - first:
+      213: -5850013768088501377
+    second: nightGuard_runningSouth_13
+  - first:
+      213: -4429427162527656784
+    second: nightGuard_runningSouth_14
+  - first:
+      213: 4669267145501699038
+    second: nightGuard_runningSouth_15
+  - first:
+      213: -3067959972991594565
+    second: nightGuard_runningSouth_16
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationMethod: 0
+  spriteTessellationDetail: -1
+  spriteGeometrySubdivision: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: nightGuard_runningSouth_0
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 0
+        width: 203
+        height: 270
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3704d60b9c65dc7f0800000000000000
+      internalID: -590720551867301773
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nightGuard_runningSouth_1
+      rect:
+        serializedVersion: 2
+        x: 330
+        y: 0
+        width: 151
+        height: 271
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 29c37f1e627b051c0800000000000000
+      internalID: -4516909048624890734
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nightGuard_runningSouth_2
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 10
+        width: 153
+        height: 261
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8ae92f101a54c45d0800000000000000
+      internalID: -3077007887576162648
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nightGuard_runningSouth_3
+      rect:
+        serializedVersion: 2
+        x: 632
+        y: 0
+        width: 183
+        height: 271
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b02062c6105eac920800000000000000
+      internalID: 3011471095122756107
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nightGuard_runningSouth_4
+      rect:
+        serializedVersion: 2
+        x: 822
+        y: 30
+        width: 126
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: db67aa6642ce56e90800000000000000
+      internalID: -7032955601983736131
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nightGuard_runningSouth_5
+      rect:
+        serializedVersion: 2
+        x: 862
+        y: 242
+        width: 81
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 94d9fb61a653e4420800000000000000
+      internalID: 2616087163313298761
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nightGuard_runningSouth_6
+      rect:
+        serializedVersion: 2
+        x: 970
+        y: 4
+        width: 140
+        height: 264
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c6cb75dc265cd5e20800000000000000
+      internalID: 3341043526721322092
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nightGuard_runningSouth_7
+      rect:
+        serializedVersion: 2
+        x: 1112
+        y: 0
+        width: 185
+        height: 271
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5270fae0596792e80800000000000000
+      internalID: -8202894863710091483
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nightGuard_runningSouth_8
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 8
+        width: 127
+        height: 226
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 667a0b713215f79b0800000000000000
+      internalID: -5080252643487471770
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nightGuard_runningSouth_9
+      rect:
+        serializedVersion: 2
+        x: 166
+        y: 156
+        width: 9
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 27c2fdd7217039510800000000000000
+      internalID: 1554594072375536754
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nightGuard_runningSouth_10
+      rect:
+        serializedVersion: 2
+        x: 504
+        y: 129
+        width: 7
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fe0feaa58b05f8580800000000000000
+      internalID: -8822744392269893393
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nightGuard_runningSouth_11
+      rect:
+        serializedVersion: 2
+        x: 632
+        y: 120
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3f52a7c062a0933a0800000000000000
+      internalID: -6685301013320423949
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nightGuard_runningSouth_12
+      rect:
+        serializedVersion: 2
+        x: 344
+        y: 53
+        width: 7
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 02fc3594fe00d6540800000000000000
+      internalID: 5002655788805902112
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nightGuard_runningSouth_13
+      rect:
+        serializedVersion: 2
+        x: 646
+        y: 16
+        width: 9
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f73c0fdf87390dea0800000000000000
+      internalID: -5850013768088501377
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nightGuard_runningSouth_14
+      rect:
+        serializedVersion: 2
+        x: 902
+        y: 6
+        width: 27
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0b4921bb6738782c0800000000000000
+      internalID: -4429427162527656784
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nightGuard_runningSouth_15
+      rect:
+        serializedVersion: 2
+        x: 616
+        y: 2
+        width: 9
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: edbe701eab19cc040800000000000000
+      internalID: 4669267145501699038
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nightGuard_runningSouth_16
+      rect:
+        serializedVersion: 2
+        x: 926
+        y: 0
+        width: 19
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bbf08b8c8aa6c65d0800000000000000
+      internalID: -3067959972991594565
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      nightGuard_runningSouth_0: -590720551867301773
+      nightGuard_runningSouth_1: -4516909048624890734
+      nightGuard_runningSouth_10: -8822744392269893393
+      nightGuard_runningSouth_11: -6685301013320423949
+      nightGuard_runningSouth_12: 5002655788805902112
+      nightGuard_runningSouth_13: -5850013768088501377
+      nightGuard_runningSouth_14: -4429427162527656784
+      nightGuard_runningSouth_15: 4669267145501699038
+      nightGuard_runningSouth_16: -3067959972991594565
+      nightGuard_runningSouth_2: -3077007887576162648
+      nightGuard_runningSouth_3: 3011471095122756107
+      nightGuard_runningSouth_4: -7032955601983736131
+      nightGuard_runningSouth_5: 2616087163313298761
+      nightGuard_runningSouth_6: 3341043526721322092
+      nightGuard_runningSouth_7: -8202894863710091483
+      nightGuard_runningSouth_8: -5080252643487471770
+      nightGuard_runningSouth_9: 1554594072375536754
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
