@@ -30,7 +30,18 @@ public class playerController : MonoBehaviour
     {
         _playerDirection = _playerControls.Player.Move.ReadValue<Vector2>();
 
-        _playerAnimator.SetInteger("idTransition",1);
+        int id = 0; // parado
+
+        if (_playerDirection.sqrMagnitude > 0.01f)
+        {
+            // Escolhe o eixo dominante (evita ambiguidade na diagonal)
+            if (Mathf.Abs(_playerDirection.x) > Mathf.Abs(_playerDirection.y))
+                id = _playerDirection.x > 0 ? 4 : 3;   // direita : esquerda
+            else
+                id = _playerDirection.y > 0 ? 1 : 2;   // norte : sul
+        }
+
+        _playerAnimator.SetInteger("idTransition", id);
     }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created

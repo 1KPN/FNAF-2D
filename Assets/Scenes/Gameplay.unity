@@ -144,7 +144,7 @@ PolygonCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 354664600}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Density: 1
   m_Material: {fileID: 0}
@@ -285,8 +285,8 @@ PolygonCollider2D:
       - {x: -3.0482686, y: -0.4781593}
       - {x: -3.0433006, y: -0.97885025}
       - {x: -2.508238, y: -0.98737776}
-      - {x: -2.4818237, y: -2.5119524}
-      - {x: -2.710076, y: -2.5168264}
+      - {x: -2.484053, y: -2.8484154}
+      - {x: -2.7015564, y: -2.8391924}
       - {x: -2.7123873, y: -2.2473369}
       - {x: -2.9150193, y: -2.2826447}
       - {x: -2.9132845, y: -2.7122767}
@@ -2469,7 +2469,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 998475044}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7db70e0ea77f5ac47a8f4565a9406397, type: 3}
   m_Name: 
