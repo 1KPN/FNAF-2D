@@ -24,6 +24,7 @@ public class ControleBotoes : MonoBehaviour
 
     [Header("Se for um botão de LUZ:")]
     public Light2D luzExterna;
+    public float tempoLuz = 4f; 
 
     private bool jogadorNaArea = false;
     private bool ativado = false;
@@ -31,17 +32,17 @@ public class ControleBotoes : MonoBehaviour
     private Vector3 posicaoFechada;
     private Vector3 posicaoAberta;
     private Coroutine fadeCoroutine;
+    private Coroutine luzCoroutine;
 
     void Start()
     {
         if (tipo == TipoBotao.Porta && porta != null && pontoAberta != null)
         {
             posicaoFechada = porta.transform.position;
-            posicaoAberta = pontoAberta.position;
+            posicaoAberta = pontoAberta.position; 
         }
 
         if (spriteRendererBotao != null) spriteRendererBotao.sprite = spriteDesligado;
-            
         if (textoAviso != null) textoAviso.alpha = 0f;
     }
 
@@ -49,14 +50,15 @@ public class ControleBotoes : MonoBehaviour
     {
         if (jogadorNaArea && Keyboard.current != null && Keyboard.current.eKey.wasPressedThisFrame)
         {
-            ativado = !ativado; 
-            
-            if (spriteRendererBotao != null)
-                spriteRendererBotao.sprite = ativado ? spriteLigado : spriteDesligado;
-
-            if (tipo == TipoBotao.Luz && luzExterna != null)
+            if (tipo == TipoBotao.Porta)
             {
-                luzExterna.enabled = ativado; 
+                ativado = !ativado; 
+                if (spriteRendererBotao != null) spriteRendererBotao.sprite = ativado ? spriteLigado : spriteDesligado;
+            }
+            else if (tipo == TipoBotao.Luz && !ativado) 
+            {
+                if (luzCoroutine != null) StopCoroutine(luzCoroutine);
+                luzCoroutine = StartCoroutine(TemporizadorLuz());
             }
         }
 
@@ -67,6 +69,19 @@ public class ControleBotoes : MonoBehaviour
         }
     }
 
+    IEnumerator TemporizadorLuz()
+    {
+        ativado = true;
+        if (spriteRendererBotao != null) spriteRendererBotao.sprite = spriteLigado;
+        if (luzExterna != null) luzExterna.enabled = true;
+
+        yield return new WaitForSeconds(tempoLuz);
+
+        ativado = false;
+        if (spriteRendererBotao != null) spriteRendererBotao.sprite = spriteDesligado;
+        if (luzExterna != null) luzExterna.enabled = false;
+    }
+
     void OnTriggerEnter2D(Collider2D outro)
     {
         if (outro.CompareTag("Player"))
@@ -75,7 +90,7 @@ public class ControleBotoes : MonoBehaviour
             if (textoAviso != null)
             {
                 if (fadeCoroutine != null) StopCoroutine(fadeCoroutine);
-                fadeCoroutine = StartCoroutine(EfeitoFade(1f)); // Chama o fade até 1 (100% visível)
+                fadeCoroutine = StartCoroutine(EfeitoFade(1f));
             }
         }
     }
