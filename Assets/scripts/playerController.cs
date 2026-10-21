@@ -31,6 +31,8 @@ public class playerController : MonoBehaviour
 
     private bool _isExhausted = false;
 
+    public int fusiveisColetados = 0;
+
     private void OnEnable()
     {
         _playerControls.Enable();
