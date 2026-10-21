@@ -40,6 +40,8 @@ public class ControleBotoes : MonoBehaviour
         {
             posicaoFechada = porta.transform.position;
             posicaoAberta = pontoAberta.position; 
+            
+            porta.transform.position = posicaoAberta;
         }
 
         if (spriteRendererBotao != null) spriteRendererBotao.sprite = spriteDesligado;
@@ -64,7 +66,7 @@ public class ControleBotoes : MonoBehaviour
 
         if (tipo == TipoBotao.Porta && porta != null)
         {
-            Vector3 destino = ativado ? posicaoAberta : posicaoFechada;
+            Vector3 destino = ativado ? posicaoFechada : posicaoAberta;
             porta.transform.position = Vector3.MoveTowards(porta.transform.position, destino, velocidadePorta * Time.deltaTime);
         }
     }
