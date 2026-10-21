@@ -48,14 +48,24 @@ public class generatorInteract : MonoBehaviour
     {
         if (_scriptDoPlayer != null)
         {
-            if (_scriptDoPlayer.fusiveisColetados > 0)
+            int quantidadeNoBolso = _scriptDoPlayer.fusiveisColetados;
+
+            if (quantidadeNoBolso > 0)
             {
-                _scriptDoPlayer.fusiveisColetados--;
-                Debug.Log("Fusível depositado! Restam no bolso: " + _scriptDoPlayer.fusiveisColetados);
+                // Zera o bolso do jogador
+                _scriptDoPlayer.fusiveisColetados = 0; 
+                
+                // Manda a quantidade exata para o GameManager
+                if (GameManager.Instance != null)
+                {
+                    GameManager.Instance.RegistrarDeposito(quantidadeNoBolso);
+                }
+                
+                Debug.Log($"BZZZ! {quantidadeNoBolso} fusível(eis) depositado(s) de uma vez!");
             }
             else
             {
-                Debug.Log("Você não tem fusíveis!");
+                Debug.Log("O gerador precisa de fusíveis! Você não tem nenhum no bolso.");
             }
         }
     }

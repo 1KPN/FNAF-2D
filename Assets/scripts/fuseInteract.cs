@@ -44,12 +44,18 @@ public class fuseInteract : MonoBehaviour
         }
     }
 
-    void Coletar()
+void Coletar()
     {
         if (_scriptDoPlayer != null)
         {
             _scriptDoPlayer.fusiveisColetados++;
         }
+        
+        if (fuseManager.Instance != null)
+        {
+            fuseManager.Instance.SpawnRandomFuse();
+        }
+
         Destroy(gameObject);
     }
 }
