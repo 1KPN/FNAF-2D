@@ -118,12 +118,12 @@ TextureImporter:
       name: freddyFazbear_idle_0
       rect:
         serializedVersion: 2
-        x: 0
+        x: 3
         y: 0
-        width: 2172
+        width: 243
         height: 724
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -136,11 +136,165 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: freddyFazbear_idle_1
+      rect:
+        serializedVersion: 2
+        x: 255
+        y: 0
+        width: 271
+        height: 724
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0e4b012c852cd1d429e7a0eb639761e9
+      internalID: 982562548
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: freddyFazbear_idle_2
+      rect:
+        serializedVersion: 2
+        x: 534
+        y: 0
+        width: 271
+        height: 724
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f92f6836590f282418a21278c25d3612
+      internalID: 1338682671
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: freddyFazbear_idle_3
+      rect:
+        serializedVersion: 2
+        x: 809
+        y: 0
+        width: 271
+        height: 724
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3dc44c0f65425c242810b84081f186c9
+      internalID: -1871102533
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: freddyFazbear_idle_4
+      rect:
+        serializedVersion: 2
+        x: 1080
+        y: 0
+        width: 271
+        height: 724
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: de1518bdb566aa44bb316b1ae14d2f08
+      internalID: 25881155
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: freddyFazbear_idle_5
+      rect:
+        serializedVersion: 2
+        x: 1359
+        y: 0
+        width: 271
+        height: 724
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6f2cb7cc57d93d34b934602619cafba7
+      internalID: -207546091
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: freddyFazbear_idle_6
+      rect:
+        serializedVersion: 2
+        x: 1634
+        y: 0
+        width: 271
+        height: 724
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c2ad84fe3b6d36845bbae7375b8ddf7f
+      internalID: -273290165
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: freddyFazbear_idle_7
+      rect:
+        serializedVersion: 2
+        x: 1901
+        y: 0
+        width: 271
+        height: 724
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cf0930f36d413ec4e837dc31575643da
+      internalID: -34015399
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 818d1aef1842f2a47b45bcc1a173d65f
     internalID: 0
     vertices: []
     indices: 
@@ -148,9 +302,18 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries: []
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":8.0,"y":1.0},"gridSpriteSize":{"x":271.0,"y":724.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
       freddyFazbear_idle_0: 2362163933425818406
+      freddyFazbear_idle_1: 982562548
+      freddyFazbear_idle_2: 1338682671
+      freddyFazbear_idle_3: -1871102533
+      freddyFazbear_idle_4: 25881155
+      freddyFazbear_idle_5: -207546091
+      freddyFazbear_idle_6: -273290165
+      freddyFazbear_idle_7: -34015399
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

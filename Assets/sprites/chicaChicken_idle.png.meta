@@ -118,12 +118,12 @@ TextureImporter:
       name: chicaChicken_idle_0
       rect:
         serializedVersion: 2
-        x: 0
+        x: 6
         y: 0
-        width: 2172
+        width: 271
         height: 724
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -136,11 +136,165 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: chicaChicken_idle_1
+      rect:
+        serializedVersion: 2
+        x: 274
+        y: 0
+        width: 271
+        height: 724
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 99dd47e0726c48e49a5425d41a3567d9
+      internalID: 2119588118
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: chicaChicken_idle_2
+      rect:
+        serializedVersion: 2
+        x: 545
+        y: 0
+        width: 271
+        height: 724
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c79b36e34b02ca0458c2f48c24df4f20
+      internalID: -1526642501
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: chicaChicken_idle_3
+      rect:
+        serializedVersion: 2
+        x: 821
+        y: 0
+        width: 271
+        height: 724
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0bba2c3238779e74da25d0c235cd0da6
+      internalID: -1438566431
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: chicaChicken_idle_4
+      rect:
+        serializedVersion: 2
+        x: 1097
+        y: 0
+        width: 271
+        height: 724
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2d49b97f99d4c6742ab5ec30a12cff29
+      internalID: -2051386709
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: chicaChicken_idle_5
+      rect:
+        serializedVersion: 2
+        x: 1366
+        y: 0
+        width: 271
+        height: 724
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dcbfebac4f9777b4eb4e744d698b133a
+      internalID: -1890919539
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: chicaChicken_idle_6
+      rect:
+        serializedVersion: 2
+        x: 1636
+        y: 0
+        width: 271
+        height: 724
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 04f051b240a5d5d49939c40cbe0de1a0
+      internalID: -1229451934
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: chicaChicken_idle_7
+      rect:
+        serializedVersion: 2
+        x: 1901
+        y: 0
+        width: 271
+        height: 724
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d33d2ce5c48f48248b5f16daaaf5cdfe
+      internalID: -1925674753
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: d7eac466cdce3fc40a7164db6dfdf4b8
     internalID: 0
     vertices: []
     indices: 
@@ -148,9 +302,18 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries: []
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":8.0,"y":1.0},"gridSpriteSize":{"x":271.0,"y":724.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
       chicaChicken_idle_0: -8762111139539166475
+      chicaChicken_idle_1: 2119588118
+      chicaChicken_idle_2: -1526642501
+      chicaChicken_idle_3: -1438566431
+      chicaChicken_idle_4: -2051386709
+      chicaChicken_idle_5: -1890919539
+      chicaChicken_idle_6: -1229451934
+      chicaChicken_idle_7: -1925674753
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
