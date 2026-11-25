@@ -118,12 +118,12 @@ TextureImporter:
       name: bonnieBunny_idle_0
       rect:
         serializedVersion: 2
-        x: 0
+        x: 19
         y: 0
-        width: 2172
-        height: 724
+        width: 271
+        height: 725
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -136,11 +136,165 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: bonnieBunny_idle_1
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 0
+        width: 271
+        height: 725
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b344b87fdfa74b74a94652b9eda3ec55
+      internalID: -881804066
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bonnieBunny_idle_2
+      rect:
+        serializedVersion: 2
+        x: 574
+        y: 0
+        width: 271
+        height: 725
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2b9734d8b646fc847adb0b8005835bd4
+      internalID: 910867218
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bonnieBunny_idle_3
+      rect:
+        serializedVersion: 2
+        x: 833
+        y: 0
+        width: 271
+        height: 725
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9129a28eca3c55d44bbdeceb6938ef79
+      internalID: 698659835
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bonnieBunny_idle_4
+      rect:
+        serializedVersion: 2
+        x: 1095
+        y: 0
+        width: 271
+        height: 725
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 64d84b8ffb1c26a4796cdb461901b742
+      internalID: 659573235
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bonnieBunny_idle_5
+      rect:
+        serializedVersion: 2
+        x: 1358
+        y: 0
+        width: 271
+        height: 725
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ffc796eca64d00940a8ea623c1459079
+      internalID: -278353475
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bonnieBunny_idle_6
+      rect:
+        serializedVersion: 2
+        x: 1621
+        y: 0
+        width: 271
+        height: 725
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8f5e43eefcaf441498f8a8844a9dd27a
+      internalID: -530227106
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bonnieBunny_idle_7
+      rect:
+        serializedVersion: 2
+        x: 1887
+        y: 0
+        width: 271
+        height: 725
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 66a2c9ebd3c155943ba45735d74f8630
+      internalID: -1219157367
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 5b76f38511fa1fc4c8f65526cc0f68b8
     internalID: 0
     vertices: []
     indices: 
@@ -148,9 +302,18 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries: []
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":8.0,"y":1.0},"gridSpriteSize":{"x":271.0,"y":725.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
       bonnieBunny_idle_0: -5095029651829551399
+      bonnieBunny_idle_1: -881804066
+      bonnieBunny_idle_2: 910867218
+      bonnieBunny_idle_3: 698659835
+      bonnieBunny_idle_4: 659573235
+      bonnieBunny_idle_5: -278353475
+      bonnieBunny_idle_6: -530227106
+      bonnieBunny_idle_7: -1219157367
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

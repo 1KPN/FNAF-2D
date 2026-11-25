@@ -8,6 +8,7 @@ public class playerController : MonoBehaviour
     [SerializeField] private Vector2 _playerDirection;
 
     private Rigidbody2D _playerRB2D;
+    private AudioSource _audioPassosPlayer;
     private Animator _playerAnimator;
     public float _playerSpeed;
 
@@ -30,17 +31,18 @@ public class playerController : MonoBehaviour
     public float staminaRegenRate = 15f;
 
     private bool _isExhausted = false;
+    private bool _movimentoBloqueado;
 
     public int fusiveisColetados = 0;
 
     private void OnEnable()
     {
-        _playerControls.Enable();
+        _playerControls?.Enable();
     }
 
     private void OnDisable()
     {
-        _playerControls.Disable();
+        _playerControls?.Disable();
     }
 
     void Awake()
@@ -48,11 +50,24 @@ public class playerController : MonoBehaviour
         _playerControls = new PlayerControls();
         _playerAnimator = GetComponent<Animator>();
         _actionRun = _playerControls.FindAction("Run");
+        _playerControls.Enable();
     }
 
     void Start()
     {
         _playerRB2D = GetComponent<Rigidbody2D>();
+        _audioPassosPlayer = GetComponent<AudioSource>();
+        if (_audioPassosPlayer == null)
+            _audioPassosPlayer = gameObject.AddComponent<AudioSource>();
+        _audioPassosPlayer.playOnAwake = false;
+        _audioPassosPlayer.loop = true;
+        _audioPassosPlayer.spatialBlend = 0f;
+
+        if (_playerRB2D != null)
+        {
+            _playerRB2D.collisionDetectionMode = CollisionDetectionMode2D.Continuous;
+            _playerRB2D.interpolation = RigidbodyInterpolation2D.Interpolate;
+        }
         
         _playerInitialSpeed = _playerSpeed; 
         currentStamina = maxStamina;
@@ -69,6 +84,9 @@ public class playerController : MonoBehaviour
 
     void playerInput()
     {
+        if (_playerControls == null)
+            return;
+
         _playerDirection = _playerControls.Player.Move.ReadValue<Vector2>();
 
         int id = 0; 
@@ -81,15 +99,31 @@ public class playerController : MonoBehaviour
                 id = _playerDirection.y > 0 ? 1 : 2;   
         }
 
-        _playerAnimator.SetInteger("idTransition", id);
+        if (_playerAnimator != null)
+            _playerAnimator.SetInteger("idTransition", id);
     }
 
     void Update()
     {
+        if (_movimentoBloqueado)
+        {
+            AtualizarAudioPassos(false);
+            return;
+        }
+
         playerInput();
         playerRun();
+        AtualizarAudioPassos(_playerDirection.sqrMagnitude > 0.01f);
         HandleStamina();
         ControlaVisibilidadeBarra();
+    }
+
+    void AtualizarAudioPassos(bool movendo)
+    {
+        if (GameManager.Instance != null)
+            GameManager.Instance.AtualizarAudioPlayer(_audioPassosPlayer, movendo, _isRun);
+        else if (!movendo && _audioPassosPlayer != null && _audioPassosPlayer.isPlaying)
+            _audioPassosPlayer.Stop();
     }
 
     private void FixedUpdate()
@@ -99,12 +133,27 @@ public class playerController : MonoBehaviour
 
     void PlayerMove()
     {
-        _playerRB2D.MovePosition(_playerRB2D.position + _playerDirection * (_playerSpeed * Time.deltaTime));
+        if (_movimentoBloqueado || _playerRB2D == null) return;
+
+        Vector2 deslocamento = _playerDirection * (_playerSpeed * Time.fixedDeltaTime);
+        _playerRB2D.MovePosition(_playerRB2D.position + deslocamento);
+    }
+
+    public void PararMovimento()
+    {
+        _movimentoBloqueado = true;
+        _playerDirection = Vector2.zero;
+        _isRun = false;
+        if (_playerRB2D != null)
+            _playerRB2D.linearVelocity = Vector2.zero;
+        AtualizarAudioPassos(false);
+        if (_playerControls != null)
+            _playerControls.Disable();
     }
 
     void playerRun()
     {
-        bool estaTentandoCorrer = _actionRun.IsPressed();
+        bool estaTentandoCorrer = _actionRun != null && _actionRun.IsPressed();
         bool estaSeMovendo = _playerDirection.sqrMagnitude > 0;
 
         if (estaTentandoCorrer && !_isExhausted && currentStamina > 0 && estaSeMovendo)

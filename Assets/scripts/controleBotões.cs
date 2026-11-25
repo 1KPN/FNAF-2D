@@ -28,6 +28,8 @@ public class ControleBotoes : MonoBehaviour
 
     private bool jogadorNaArea = false;
     private bool ativado = false;
+
+    public bool PortaFechada => tipo == TipoBotao.Porta && ativado;
     
     private Vector3 posicaoFechada;
     private Vector3 posicaoAberta;
@@ -56,9 +58,13 @@ public class ControleBotoes : MonoBehaviour
             {
                 ativado = !ativado; 
                 if (spriteRendererBotao != null) spriteRendererBotao.sprite = ativado ? spriteLigado : spriteDesligado;
+                if (GameManager.Instance != null)
+                    GameManager.Instance.TocarSomPorta();
             }
             else if (tipo == TipoBotao.Luz && !ativado) 
             {
+                if (GameManager.Instance != null)
+                    GameManager.Instance.TocarSomLuz();
                 if (luzCoroutine != null) StopCoroutine(luzCoroutine);
                 luzCoroutine = StartCoroutine(TemporizadorLuz());
             }
@@ -82,6 +88,8 @@ public class ControleBotoes : MonoBehaviour
         ativado = false;
         if (spriteRendererBotao != null) spriteRendererBotao.sprite = spriteDesligado;
         if (luzExterna != null) luzExterna.enabled = false;
+        if (GameManager.Instance != null)
+            GameManager.Instance.TocarSomLuz();
     }
 
     void OnTriggerEnter2D(Collider2D outro)
