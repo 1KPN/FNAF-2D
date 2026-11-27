@@ -60,7 +60,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 50
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -127,14 +127,14 @@ TextureImporter:
       name: freddyFazbear_walkingSouth_0
       rect:
         serializedVersion: 2
-        x: 9
+        x: 2
         y: 0
-        width: 791
+        width: 160
         height: 262
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
+      customData:
       outline: []
       physicsShape: []
       tessellationDetail: -1
@@ -142,21 +142,21 @@ TextureImporter:
       spriteID: 8f8a376f7f1083c70800000000000000
       internalID: 8950906423902185720
       vertices: []
-      indices: 
+      indices:
       edges: []
       weights: []
     - serializedVersion: 2
       name: freddyFazbear_walkingSouth_1
       rect:
         serializedVersion: 2
-        x: 649
+        x: 161
         y: 0
-        width: 7
-        height: 5
+        width: 160
+        height: 262
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
+      customData:
       outline: []
       physicsShape: []
       tessellationDetail: -1
@@ -164,21 +164,21 @@ TextureImporter:
       spriteID: 71d81caff8b35c4a0800000000000000
       internalID: -6573782591504020201
       vertices: []
-      indices: 
+      indices:
       edges: []
       weights: []
     - serializedVersion: 2
       name: freddyFazbear_walkingSouth_2
       rect:
         serializedVersion: 2
-        x: 791
+        x: 324
         y: 0
-        width: 321
+        width: 160
         height: 262
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
+      customData:
       outline: []
       physicsShape: []
       tessellationDetail: -1
@@ -186,21 +186,21 @@ TextureImporter:
       spriteID: 7f807b2e60cc5ade0800000000000000
       internalID: -1322426585617856265
       vertices: []
-      indices: 
+      indices:
       edges: []
       weights: []
     - serializedVersion: 2
       name: freddyFazbear_walkingSouth_3
       rect:
         serializedVersion: 2
-        x: 1110
-        y: 5
-        width: 172
-        height: 257
+        x: 481
+        y: 0
+        width: 160
+        height: 262
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
+      customData:
       outline: []
       physicsShape: []
       tessellationDetail: -1
@@ -208,29 +208,123 @@ TextureImporter:
       spriteID: 040cd00b87fae4f60800000000000000
       internalID: 8020540919278059584
       vertices: []
-      indices: 
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: freddyFazbear_walkingSouth_4
+      rect:
+        serializedVersion: 2
+        x: 643
+        y: 0
+        width: 160
+        height: 262
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 52939bdedf1caa14bbc8f7177c23dcef
+      internalID: -566518740
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: freddyFazbear_walkingSouth_5
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 0
+        width: 160
+        height: 262
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ee5f72fec18375348956196325c24088
+      internalID: -1373163520
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: freddyFazbear_walkingSouth_6
+      rect:
+        serializedVersion: 2
+        x: 962
+        y: 0
+        width: 160
+        height: 262
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 83b9ca3a7e94412418058afb861f9289
+      internalID: 1315231714
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: freddyFazbear_walkingSouth_7
+      rect:
+        serializedVersion: 2
+        x: 1120
+        y: 0
+        width: 160
+        height: 262
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0b55a45e0e67e5e43bfdb6cdeb3060c1
+      internalID: 438404665
+      vertices: []
+      indices:
       edges: []
       weights: []
     outline: []
-    customData: 
+    customData:
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 22ddd13616d073b4c88fe7c569b71453
     internalID: 0
     vertices: []
-    indices: 
+    indices:
     edges: []
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries: []
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":8.0,"y":1.0},"gridSpriteSize":{"x":160.0,"y":262.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
       freddyFazbear_walkingSouth_0: 8950906423902185720
       freddyFazbear_walkingSouth_1: -6573782591504020201
       freddyFazbear_walkingSouth_2: -1322426585617856265
       freddyFazbear_walkingSouth_3: 8020540919278059584
-  mipmapLimitGroupName: 
+      freddyFazbear_walkingSouth_4: -566518740
+      freddyFazbear_walkingSouth_5: -1373163520
+      freddyFazbear_walkingSouth_6: 1315231714
+      freddyFazbear_walkingSouth_7: 438404665
+  mipmapLimitGroupName:
   pSDRemoveMatte: 0
-  userData: 
-  assetBundleName: 
-  assetBundleVariant: 
+  userData:
+  assetBundleName:
+  assetBundleVariant:

@@ -7,7 +7,7 @@ public class animatronicHibrid : MonoBehaviour
 {
     private static readonly RaycastHit2D[] impactosRaycast = new RaycastHit2D[32];
     private static readonly ContactFilter2D filtroPortas = ContactFilter2D.noFilter;
-    private static readonly ContactFilter2D filtroVisao = CriarFiltroVisao();
+    private static readonly int parametroDirecaoHash = Animator.StringToHash("idTransition");
 
     public enum EstadoIA { Patrulha, Perseguicao, Retornando }
     public EstadoIA estadoAtual = EstadoIA.Patrulha;
@@ -22,24 +22,55 @@ public class animatronicHibrid : MonoBehaviour
     public float velocidadePerseguicao = 4f;
     public float distanciaDeVisao = 7f;
     public float distanciaAtaque = 1.1f;
-    public float raioAgenteSeguro = 0.5f;
+    [SerializeField, Min(0f)] private float tempoSemVisaoAntesDeRetornar = 1.5f;
+    public float raioAgenteSeguro = 0.75f;
     public LayerMask layerParedes;
 
     private NavMeshAgent _agente;
+    private NavMeshPath _caminhoPlanejado;
     private Vector3 _posicaoInicial;
     private SpriteRenderer _spriteRenderer;
+    private Animator _animator;
     private AudioSource _audioPassos;
     private Collider2D[] _collidersPlayer;
     private bool jogoAcabou = false;
     private bool _rotaBloqueadaPorPorta;
     private float _multiplicadorDificuldade = 1f;
+    private Vector3 _ultimoDestinoSolicitado;
+    private bool _haDestinoSolicitado;
+    private float _proximaTentativaDestino;
+    private float _proximaEscolhaNo;
+    private float _tempoSemProgresso;
+    private int _direcaoAnimacaoAtual = -1;
+    private bool _jaAvisouTravamento;
+    private bool _possuiParametroDirecao;
+    private float _tempoSemVerPlayer;
 
     public bool EstaBloqueadoPorPorta => _rotaBloqueadaPorPorta;
 
     void Start()
     {
         _spriteRenderer = GetComponent<SpriteRenderer>();
+        _animator = GetComponent<Animator>();
+
+        if (_animator != null)
+        {
+            foreach (AnimatorControllerParameter parametro in _animator.parameters)
+            {
+                if (parametro.nameHash == parametroDirecaoHash
+                    && parametro.type == AnimatorControllerParameterType.Int)
+                {
+                    _possuiParametroDirecao = true;
+                    break;
+                }
+            }
+
+            if (!_possuiParametroDirecao)
+                Debug.LogError($"O Animator de {gameObject.name} precisa do parâmetro inteiro 'idTransition'.", this);
+        }
+
         _agente = GetComponent<NavMeshAgent>();
+        _caminhoPlanejado = new NavMeshPath();
         _audioPassos = GetComponent<AudioSource>();
         if (_audioPassos == null)
             _audioPassos = gameObject.AddComponent<AudioSource>();
@@ -71,7 +102,7 @@ public class animatronicHibrid : MonoBehaviour
 
         _agente.updateRotation = false;
         _agente.updateUpAxis = false;
-        _agente.radius = Mathf.Max(_agente.radius, raioAgenteSeguro);
+        _agente.radius = Mathf.Max(_agente.radius, Mathf.Max(raioAgenteSeguro, 0.5f));
         _agente.obstacleAvoidanceType = ObstacleAvoidanceType.HighQualityObstacleAvoidance;
 
         NavMeshHit hit;
@@ -86,6 +117,7 @@ public class animatronicHibrid : MonoBehaviour
             if (!_agente.Warp(hit.position))
             {
                 Debug.LogWarning("Não foi possível posicionar o agente do animatrônico na NavMesh.", this);
+                _agente.enabled = false;
             }
             else
             {
@@ -97,10 +129,17 @@ public class animatronicHibrid : MonoBehaviour
             Debug.LogWarning("Não há NavMesh próxima para posicionar este animatrônico.", this);
         }
 
+        AtualizarAnimacaoDirecional(Vector3.zero);
+
         if (todosOsNosDoMapa != null && todosOsNosDoMapa.Count > 0)
         {
             EscolherNovoNoAleatorio();
         }
+    }
+
+    void OnDestroy()
+    {
+        PararAudio();
     }
 
     void Update()
@@ -109,21 +148,30 @@ public class animatronicHibrid : MonoBehaviour
 
         transform.position = new Vector3(transform.position.x, transform.position.y, 0f);
 
-        if (_agente == null || !_agente.isOnNavMesh)
+        if (_agente == null || !_agente.enabled || !_agente.isOnNavMesh)
         {
+            AtualizarAnimacaoDirecional(Vector3.zero);
             AtualizarAudio(false, false);
             return;
         }
 
-        if (_spriteRenderer != null && _agente.velocity.x != 0)
+        if (estadoAtual == EstadoIA.Perseguicao)
         {
-            _spriteRenderer.flipX = _agente.velocity.x < 0;
-        }
-
-        if (estadoAtual == EstadoIA.Perseguicao && !JogadorVisivel())
-        {
-            estadoAtual = EstadoIA.Retornando;
-            _agente.ResetPath();
+            if (JogadorVisivel())
+            {
+                _tempoSemVerPlayer = 0f;
+            }
+            else
+            {
+                _tempoSemVerPlayer += Time.deltaTime;
+                if (_tempoSemVerPlayer >= tempoSemVisaoAntesDeRetornar)
+                {
+                    estadoAtual = EstadoIA.Retornando;
+                    _agente.ResetPath();
+                    _haDestinoSolicitado = false;
+                    _tempoSemVerPlayer = 0f;
+                }
+            }
         }
 
         switch (estadoAtual)
@@ -153,6 +201,12 @@ public class animatronicHibrid : MonoBehaviour
                 break;
         }
 
+        if (estadoAtual == EstadoIA.Perseguicao)
+            VerificarAtaquePlayer(alvoPlayer);
+
+        AtualizarAnimacaoDirecional(_agente.velocity);
+        DetectarFaltaDeProgresso();
+
         AtualizarAudio(
             estadoAtual == EstadoIA.Perseguicao,
             !_agente.isStopped && _agente.velocity.sqrMagnitude > 0.04f);
@@ -162,9 +216,18 @@ public class animatronicHibrid : MonoBehaviour
     {
         if (todosOsNosDoMapa == null || todosOsNosDoMapa.Count == 0) return false;
         if (noAlvoAtual == null) EscolherNovoNoAleatorio();
-        if (noAlvoAtual == null || !TentarDefinirDestino(noAlvoAtual.position)) return false;
+        if (noAlvoAtual == null) return false;
+        if (!TentarDefinirDestino(noAlvoAtual.position))
+        {
+            if (!_rotaBloqueadaPorPorta && Time.time >= _proximaEscolhaNo)
+            {
+                EscolherNovoNoAleatorio();
+                _proximaEscolhaNo = Time.time + 0.35f;
+            }
+            return false;
+        }
 
-        if (!_agente.pathPending && _agente.remainingDistance < 0.5f)
+        if (!_agente.pathPending && _agente.hasPath && _agente.remainingDistance < 0.5f)
         {
             EscolherNovoNoAleatorio();
         }
@@ -175,28 +238,66 @@ public class animatronicHibrid : MonoBehaviour
     {
         if (PortaFechadaNoCaminho(destino))
         {
-            if (!_rotaBloqueadaPorPorta)
-                _agente.ResetPath();
-
             _rotaBloqueadaPorPorta = true;
             _agente.isStopped = true;
-            return false;
-        }
-
-        if (!NavMesh.SamplePosition(
-            destino,
-            out NavMeshHit pontoSeguro,
-            Mathf.Max(raioAgenteSeguro * 2f, 1f),
-            _agente.areaMask))
-        {
             _agente.ResetPath();
-            _agente.isStopped = true;
+            _haDestinoSolicitado = false;
             return false;
         }
 
         _rotaBloqueadaPorPorta = false;
+        float margemAmostragem = Mathf.Max(_agente.radius, raioAgenteSeguro);
+        if (!NavMesh.SamplePosition(
+            destino,
+            out NavMeshHit pontoSeguro,
+            margemAmostragem,
+            _agente.areaMask))
+        {
+            PararRotaSemDestino(destino);
+            return false;
+        }
+
+        float distanciaMudancaDestino = Mathf.Max(_agente.radius * 0.5f, 0.25f);
+        bool destinoMudou = !_haDestinoSolicitado
+            || (pontoSeguro.position - _ultimoDestinoSolicitado).sqrMagnitude
+                > distanciaMudancaDestino * distanciaMudancaDestino;
+        if (!destinoMudou && (_agente.pathPending || _agente.hasPath))
+            return true;
+
+        if (!destinoMudou && Time.time < _proximaTentativaDestino)
+            return false;
+
+        if (!NavMesh.CalculatePath(
+            _agente.nextPosition,
+            pontoSeguro.position,
+            _agente.areaMask,
+            _caminhoPlanejado)
+            || _caminhoPlanejado.status != NavMeshPathStatus.PathComplete)
+        {
+            PararRotaSemDestino(pontoSeguro.position);
+            return false;
+        }
+
         _agente.isStopped = false;
-        return _agente.SetDestination(pontoSeguro.position);
+        if (!_agente.SetDestination(pontoSeguro.position))
+        {
+            PararRotaSemDestino(pontoSeguro.position);
+            return false;
+        }
+
+        _ultimoDestinoSolicitado = pontoSeguro.position;
+        _haDestinoSolicitado = true;
+        _proximaTentativaDestino = Time.time + 0.35f;
+        return true;
+    }
+
+    void PararRotaSemDestino(Vector3 destino)
+    {
+        _agente.ResetPath();
+        _agente.isStopped = true;
+        _ultimoDestinoSolicitado = destino;
+        _haDestinoSolicitado = true;
+        _proximaTentativaDestino = Time.time + 0.35f;
     }
 
     bool PortaFechadaNoCaminho(Vector3 destino)
@@ -239,17 +340,104 @@ public class animatronicHibrid : MonoBehaviour
         }
 
         int inicio = Random.Range(0, todosOsNosDoMapa.Count);
+        Transform noAnterior = noAlvoAtual;
+        Transform alternativa = null;
         for (int i = 0; i < todosOsNosDoMapa.Count; i++)
         {
             Transform candidato = todosOsNosDoMapa[(inicio + i) % todosOsNosDoMapa.Count];
-            if (candidato != null)
+            if (candidato == null)
+                continue;
+
+            if (alternativa == null)
+                alternativa = candidato;
+
+            if (candidato != noAnterior)
             {
                 noAlvoAtual = candidato;
                 return;
             }
         }
 
-        noAlvoAtual = null;
+        noAlvoAtual = alternativa;
+    }
+
+    void AtualizarAnimacaoDirecional(Vector3 velocidade)
+    {
+        if (_animator == null || !_possuiParametroDirecao)
+            return;
+
+        const float velocidadeMinima = 0.04f;
+        int direcao = 0;
+
+        if (velocidade.sqrMagnitude >= velocidadeMinima && _agente != null && !_agente.isStopped)
+        {
+            if (Mathf.Abs(velocidade.x) > Mathf.Abs(velocidade.y))
+            {
+                direcao = velocidade.x < 0f ? 3 : 4;
+                if (_spriteRenderer != null)
+                    _spriteRenderer.flipX = velocidade.x < 0f;
+            }
+            else
+            {
+                direcao = velocidade.y > 0f ? 1 : 2;
+                if (_spriteRenderer != null)
+                    _spriteRenderer.flipX = false;
+            }
+        }
+        else if (_spriteRenderer != null)
+        {
+            _spriteRenderer.flipX = false;
+        }
+
+        if (direcao == _direcaoAnimacaoAtual)
+            return;
+
+        _animator.SetInteger(parametroDirecaoHash, direcao);
+        _direcaoAnimacaoAtual = direcao;
+    }
+
+    void DetectarFaltaDeProgresso()
+    {
+        bool deveEstarAndando = !_rotaBloqueadaPorPorta
+            && !_agente.isStopped
+            && !_agente.pathPending
+            && _agente.hasPath
+            && _agente.remainingDistance > Mathf.Max(_agente.stoppingDistance + 0.25f, 0.5f)
+            && _agente.desiredVelocity.sqrMagnitude > 0.04f;
+
+        if (!deveEstarAndando)
+        {
+            _tempoSemProgresso = 0f;
+            _jaAvisouTravamento = false;
+            return;
+        }
+
+        if (_agente.velocity.sqrMagnitude > 0.01f)
+        {
+            _tempoSemProgresso = 0f;
+            _jaAvisouTravamento = false;
+            return;
+        }
+
+        _tempoSemProgresso += Time.deltaTime;
+        if (_tempoSemProgresso < 1.25f)
+            return;
+
+        if (!_jaAvisouTravamento)
+        {
+            Debug.LogWarning(
+                $"O agente de {gameObject.name} não avançou; a rota será recalculada.",
+                this);
+            _jaAvisouTravamento = true;
+        }
+
+        _agente.ResetPath();
+        _haDestinoSolicitado = false;
+        _proximaTentativaDestino = 0f;
+        if (estadoAtual == EstadoIA.Patrulha)
+            EscolherNovoNoAleatorio();
+
+        _tempoSemProgresso = 0f;
     }
 
     void VerificarVisao()
@@ -257,6 +445,7 @@ public class animatronicHibrid : MonoBehaviour
         if (estadoAtual != EstadoIA.Perseguicao && JogadorVisivel())
         {
             estadoAtual = EstadoIA.Perseguicao;
+            _tempoSemVerPlayer = 0f;
             if (GameManager.Instance != null)
                 GameManager.Instance.TocarAlertaAnimatronico(gameObject);
         }
@@ -281,54 +470,14 @@ public class animatronicHibrid : MonoBehaviour
             float distancia = direcao.magnitude;
             if (distancia > distanciaDeVisao)
                 continue;
-            if (distancia <= 0.001f)
+            if (distancia <= 0.001f || layerParedes.value == 0)
                 return true;
 
-            int quantidadeImpactos = Physics2D.Raycast(
-                origem,
-                direcao / distancia,
-                filtroVisao,
-                impactosRaycast,
-                distancia + 0.02f);
-            bool jogadorAtingido = false;
-            bool bloqueado = false;
-
-            for (int i = 0; i < quantidadeImpactos; i++)
-            {
-                Collider2D collider = impactosRaycast[i].collider;
-                if (collider == null || FazParteDoAnimatronico(collider))
-                    continue;
-
-                if (FazParteDoJogador(collider))
-                    jogadorAtingido = true;
-                else if (impactosRaycast[i].distance < distancia - 0.03f)
-                    bloqueado = true;
-            }
-
-            if (jogadorAtingido && !bloqueado)
+            if (Physics2D.Linecast(origem, pontoAlvo, layerParedes).collider == null)
                 return true;
         }
 
         return false;
-    }
-
-    bool FazParteDoAnimatronico(Collider2D collider)
-    {
-        return collider.transform == transform || collider.transform.IsChildOf(transform);
-    }
-
-    bool FazParteDoJogador(Collider2D collider)
-    {
-        return collider.transform == alvoPlayer || collider.transform.IsChildOf(alvoPlayer);
-    }
-
-    static ContactFilter2D CriarFiltroVisao()
-    {
-        ContactFilter2D filtro = new ContactFilter2D();
-        filtro.useTriggers = false;
-        filtro.useLayerMask = false;
-        filtro.useDepth = false;
-        return filtro;
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -348,10 +497,15 @@ public class animatronicHibrid : MonoBehaviour
             return;
 
         Transform alvo = player != null ? player.transform : alvoPlayer;
-        if (alvo == null || Vector2.Distance(transform.position, alvo.position) > distanciaAtaque)
-            return;
+        VerificarAtaquePlayer(alvo);
+    }
 
-        if (_rotaBloqueadaPorPorta || PortaFechadaNoCaminho(alvo.position))
+    void VerificarAtaquePlayer(Transform alvo)
+    {
+        if (alvo == null
+            || Vector2.Distance(transform.position, alvo.position) > distanciaAtaque
+            || PortaFechadaNoCaminho(alvo.position)
+            || !JogadorVisivel())
             return;
 
         if (GameManager.Instance == null)

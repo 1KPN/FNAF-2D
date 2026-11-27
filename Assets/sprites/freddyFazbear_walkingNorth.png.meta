@@ -3,11 +3,29 @@ guid: 49efcc5af7725034995828a740d252a5
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -8090148904297437841
+      213: 6664843502336187726
     second: freddyFazbear_walkingNorth_0
   - first:
-      213: -8181417043042255424
+      213: 4210227644343316320
     second: freddyFazbear_walkingNorth_1
+  - first:
+      213: 6433004052843385861
+    second: freddyFazbear_walkingNorth_2
+  - first:
+      213: 7808768539385679038
+    second: freddyFazbear_walkingNorth_3
+  - first:
+      213: 1216205360914780124
+    second: freddyFazbear_walkingNorth_4
+  - first:
+      213: 2560485833311067059
+    second: freddyFazbear_walkingNorth_5
+  - first:
+      213: 5312575710236073353
+    second: freddyFazbear_walkingNorth_6
+  - first:
+      213: 8324504478754373247
+    second: freddyFazbear_walkingNorth_7
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -123,60 +141,198 @@ TextureImporter:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 783
+        width: 157
         height: 267
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
+      customData:
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: f65e55b5f640abf80800000000000000
-      internalID: -8090148904297437841
+      spriteID: 0646d58be648811261bd81600d2f8493
+      internalID: 6664843502336187726
       vertices: []
-      indices: 
+      indices:
       edges: []
       weights: []
     - serializedVersion: 2
       name: freddyFazbear_walkingNorth_1
       rect:
         serializedVersion: 2
-        x: 778
+        x: 157
         y: 0
-        width: 478
+        width: 157
         height: 267
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
+      customData:
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 0cdb32edb84c57e80800000000000000
-      internalID: -8181417043042255424
+      spriteID: 14ee1e69a7d003c6af2cf13bdfcaede9
+      internalID: 4210227644343316320
       vertices: []
-      indices: 
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: freddyFazbear_walkingNorth_2
+      rect:
+        serializedVersion: 2
+        x: 314
+        y: 0
+        width: 158
+        height: 267
+      alignment: 0
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a4cde68da02b02097237ec364443ad62
+      internalID: 6433004052843385861
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: freddyFazbear_walkingNorth_3
+      rect:
+        serializedVersion: 2
+        x: 472
+        y: 0
+        width: 157
+        height: 267
+      alignment: 0
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b9ba0d01df1ddd67f5b8ab2df84f0048
+      internalID: 7808768539385679038
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: freddyFazbear_walkingNorth_4
+      rect:
+        serializedVersion: 2
+        x: 629
+        y: 0
+        width: 157
+        height: 267
+      alignment: 0
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 87ca3c590c8bc5d287f54a4c6c719d59
+      internalID: 1216205360914780124
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: freddyFazbear_walkingNorth_5
+      rect:
+        serializedVersion: 2
+        x: 786
+        y: 0
+        width: 158
+        height: 267
+      alignment: 0
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e979b45a6ecf26f287ff34fdb4a0d432
+      internalID: 2560485833311067059
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: freddyFazbear_walkingNorth_6
+      rect:
+        serializedVersion: 2
+        x: 944
+        y: 0
+        width: 157
+        height: 267
+      alignment: 0
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b51eda0aa222633ae74ee21e56f8f7ae
+      internalID: 5312575710236073353
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: freddyFazbear_walkingNorth_7
+      rect:
+        serializedVersion: 2
+        x: 1101
+        y: 0
+        width: 157
+        height: 267
+      alignment: 0
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fa99ea2158e4af59a4b3c51ef82e8f36
+      internalID: 8324504478754373247
+      vertices: []
+      indices:
       edges: []
       weights: []
     outline: []
-    customData: 
+    customData:
     physicsShape: []
     bones: []
     spriteID: 
     internalID: 0
     vertices: []
-    indices: 
+    indices:
     edges: []
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      freddyFazbear_walkingNorth_0: -8090148904297437841
-      freddyFazbear_walkingNorth_1: -8181417043042255424
+      freddyFazbear_walkingNorth_0: 6664843502336187726
+      freddyFazbear_walkingNorth_1: 4210227644343316320
+      freddyFazbear_walkingNorth_2: 6433004052843385861
+      freddyFazbear_walkingNorth_3: 7808768539385679038
+      freddyFazbear_walkingNorth_4: 1216205360914780124
+      freddyFazbear_walkingNorth_5: 2560485833311067059
+      freddyFazbear_walkingNorth_6: 5312575710236073353
+      freddyFazbear_walkingNorth_7: 8324504478754373247
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

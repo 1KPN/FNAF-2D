@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
@@ -10,7 +11,9 @@ public class GameManager : MonoBehaviour
     private enum EstadoJogo { EmAndamento, Jumpscare, GameOver, ProximaNoite, JogoConcluido }
 
     private const int TotalNoites = 5;
+    private const string NoiteSalvaKey = "FNAF2D.HighestNightUnlocked";
     private static int _noiteDaSessao = 1;
+    private static bool _ignorarMenuNaProximaCarga;
 
     public static GameManager Instance;
 
@@ -63,28 +66,51 @@ public class GameManager : MonoBehaviour
 
     [Header("Transições visuais")]
     [SerializeField] private Sprite spriteSangue;
+    [SerializeField] private Image imagemTintVermelha;
+    [SerializeField] private Image imagemSangue;
+    [SerializeField] private Image imagemFade;
+    [SerializeField] private TextMeshProUGUI textoHorarioTransicao;
     [SerializeField, Range(0f, 1f)] private float opacidadeSangue = 0.75f;
     [SerializeField, Range(0f, 1f)] private float intensidadeVermelha = 0.25f;
     [SerializeField, Min(0.01f)] private float duracaoFadeJumpscare = 0.16f;
     [SerializeField, Min(0.01f)] private float duracaoFadeVitoria = 0.3f;
+
+    [Header("Pause e abertura da noite")]
+    [SerializeField] private GameObject painelPause;
+    [SerializeField] private GameObject painelAberturaNoite;
+    [SerializeField] private TextMeshProUGUI textoAberturaNoite;
+    [SerializeField, Min(0f)] private float duracaoAberturaNoite = 2f;
+    [SerializeField, Min(0.01f)] private float duracaoFadeAberturaNoite = 0.4f;
+    [SerializeField] private Button botaoContinuarPause;
+    [SerializeField] private Button botaoReiniciarPause;
+    [SerializeField] private Button botaoMenuPause;
+    [SerializeField] private Button botaoSairPause;
+
+    [Header("Fonte da interface")]
+    [SerializeField] private TMP_FontAsset fonteFnaf;
+    [SerializeField] private Material materialFonteFnaf;
+
+    [Header("HUD dos fusíveis")]
+    [SerializeField] private Image[] iconesFusivelHUD = new Image[7];
+    [SerializeField] private Color corFusivelApagado = new Color(0.32f, 0.32f, 0.32f, 1f);
+    [SerializeField] private Color corFusivelAceso = Color.white;
 
     [Header("Progressão")]
     public int fusiveisNecessarios = 5;
     [SerializeField] private float aumentoDificuldadePorNoite = 0.15f;
     [SerializeField] private Button botaoVoltarAoMenu;
 
-    [Header("HUD (opcional; criado automaticamente se vazio)")]
+    [Header("HUD da cena Gameplay")]
     public TextMeshProUGUI textoProgresso;
 
     private EstadoJogo _estado = EstadoJogo.EmAndamento;
     private int _noiteAtual;
     private bool _transicaoPendente;
+    private bool _pausado;
+    private bool _noiteEmAbertura;
+    private float _timeScaleAntesDePausar = 1f;
+    private bool _audioListenerPausadoAntes;
     private readonly Dictionary<AudioSource, float> _ultimoAudioPorFonte = new Dictionary<AudioSource, float>();
-    private Image _imagemFade;
-    private Image _imagemTintVermelha;
-    private Image _imagemSangue;
-    private TextMeshProUGUI _textoHorarioTransicao;
-    private GameObject _canvasTransicoes;
     private static GameObject _audioConclusaoPersistente;
     private static AudioSource _audioSinalNoitePersistente;
     private static AudioSource _audioMultidaoNoitePersistente;
@@ -102,7 +128,7 @@ public class GameManager : MonoBehaviour
         }
 
         Instance = this;
-        Time.timeScale = 1f;
+        Time.timeScale = mainMenuUI.IsMenuOpen ? 0f : 1f;
         PrepararAudioSources();
         _noiteAtual = Mathf.Clamp(_noiteDaSessao, 1, TotalNoites);
         ConfigurarNoite();
@@ -110,30 +136,118 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
+        if (mainMenuUI.IsMenuOpen)
+        {
+            Time.timeScale = 0f;
+            return;
+        }
+
         Time.timeScale = 1f;
         if (painelGameOver != null) painelGameOver.SetActive(false);
         if (painelVitoria != null) painelVitoria.SetActive(false);
+        if (painelPause != null) painelPause.SetActive(false);
+        if (painelAberturaNoite != null) painelAberturaNoite.SetActive(false);
+        if (botaoVoltarAoMenu != null) botaoVoltarAoMenu.gameObject.SetActive(false);
+        AtualizarTextoBotaoGameOver();
         if (visualJumpscare != null) visualJumpscare.SetActive(false);
         CriarCamadaTransicoes();
 
-        TocarLoop(audioAmbiente, clipAmbiente);
-        TocarLoop(audioMusica, clipMusica);
-
         if (textoProgresso == null)
-            CriarHud();
+            Debug.LogError("Configure o HUD da noite na cena Gameplay e vincule seu texto ao GameManager.", this);
+        if (iconesFusivelHUD == null || iconesFusivelHUD.Length < fusiveisNecessarios)
+            Debug.LogError("Vincule um Image por fusível da noite ao HUD da cena Gameplay.", this);
+        else
+        {
+            for (int i = 0; i < fusiveisNecessarios; i++)
+            {
+                if (iconesFusivelHUD[i] == null)
+                    Debug.LogError($"Vincule o ícone de fusível {i + 1} ao GameManager.", this);
+            }
+        }
 
         AtualizarHud();
+        Time.timeScale = 0f;
+        _noiteEmAbertura = true;
+        StartCoroutine(IniciarNoiteAposAbertura());
+    }
+
+    void Update()
+    {
+        if (Keyboard.current != null && Keyboard.current.escapeKey.wasPressedThisFrame)
+            AlternarPause();
+    }
+
+    public void AlternarPause()
+    {
+        if (_estado != EstadoJogo.EmAndamento || _noiteEmAbertura || _transicaoPendente)
+            return;
+
+        if (_pausado)
+            ContinuarJogo();
+        else
+            PausarJogo();
+    }
+
+    public void PausarJogo()
+    {
+        if (_estado != EstadoJogo.EmAndamento || _noiteEmAbertura || _transicaoPendente || _pausado)
+            return;
+
+        _timeScaleAntesDePausar = Time.timeScale;
+        _audioListenerPausadoAntes = AudioListener.pause;
+        _pausado = true;
+        Time.timeScale = 0f;
+        AudioListener.pause = true;
+        if (painelPause != null)
+            painelPause.SetActive(true);
+        TocarSomUI();
+    }
+
+    public void ContinuarJogo()
+    {
+        if (!_pausado)
+            return;
+
+        if (painelPause != null)
+            painelPause.SetActive(false);
+        _pausado = false;
+        AudioListener.pause = _audioListenerPausadoAntes;
+        Time.timeScale = _timeScaleAntesDePausar;
+        TocarSomUI();
+    }
+
+    public void SairDoJogo()
+    {
+        if (_pausado)
+        {
+            if (painelPause != null)
+                painelPause.SetActive(false);
+            _pausado = false;
+            AudioListener.pause = _audioListenerPausadoAntes;
+            Time.timeScale = _timeScaleAntesDePausar;
+        }
+
+        TocarSomUI();
+#if UNITY_EDITOR
+        UnityEditor.EditorApplication.isPlaying = false;
+#else
+        Application.Quit();
+#endif
     }
 
     void OnDestroy()
     {
+        if (_pausado || _noiteEmAbertura)
+        {
+            AudioListener.pause = false;
+            Time.timeScale = 1f;
+        }
+
         PararAudio(audioAmbiente);
         PararAudio(audioMusica);
         PararAudio(audioUI);
         PararAudio(audioGameplay);
         PararAudio(audioJumpscare);
-        if (_canvasTransicoes != null)
-            Destroy(_canvasTransicoes);
         if (Instance == this)
             Instance = null;
     }
@@ -151,6 +265,7 @@ public class GameManager : MonoBehaviour
         audioUI.volume = 0.65f;
         audioGameplay.volume = 0.45f;
         audioJumpscare.volume = 0.9f;
+        audioUI.ignoreListenerPause = true;
     }
 
     AudioSource PrepararAudioSource(AudioSource source)
@@ -218,101 +333,90 @@ public class GameManager : MonoBehaviour
 
     void CriarCamadaTransicoes()
     {
+        if (imagemFade == null || imagemTintVermelha == null || imagemSangue == null
+            || textoHorarioTransicao == null)
+        {
+            Debug.LogError("Vincule Fade, Tint Vermelho, Sangue e Texto da Transição na cena Gameplay.", this);
+        }
+
+        if (imagemFade != null)
+        {
+            imagemFade.color = new Color(0f, 0f, 0f, 1f);
+            imagemFade.gameObject.SetActive(true);
+        }
+
         if (spriteSangue == null)
             Debug.LogError("Configure o sprite de sangue no GameManager para exibir o efeito de jumpscare.", this);
-
-        _canvasTransicoes = new GameObject("Camada de Transições", typeof(Canvas), typeof(CanvasScaler));
-        Canvas canvas = _canvasTransicoes.GetComponent<Canvas>();
-        canvas.renderMode = RenderMode.ScreenSpaceOverlay;
-        canvas.overrideSorting = true;
-        canvas.sortingOrder = 32767;
-
-        CanvasScaler scaler = _canvasTransicoes.GetComponent<CanvasScaler>();
-        scaler.uiScaleMode = CanvasScaler.ScaleMode.ScaleWithScreenSize;
-        scaler.referenceResolution = new Vector2(1920f, 1080f);
-
-        _imagemTintVermelha = CriarImagemTela(canvas.transform, "Tint Vermelho", Color.red);
-        _imagemSangue = CriarImagemTela(canvas.transform, "Sangue", Color.white);
-        _imagemSangue.sprite = spriteSangue;
-        _imagemFade = CriarImagemTela(canvas.transform, "Fade", Color.black);
-        _textoHorarioTransicao = CriarTextoHorario(canvas.transform);
-        _imagemTintVermelha.gameObject.SetActive(false);
-        _imagemSangue.gameObject.SetActive(false);
-        _imagemFade.color = new Color(0f, 0f, 0f, 0f);
-        _textoHorarioTransicao.gameObject.SetActive(false);
+        if (imagemSangue != null)
+            imagemSangue.sprite = spriteSangue;
+        if (imagemTintVermelha != null)
+            imagemTintVermelha.gameObject.SetActive(false);
+        if (imagemSangue != null)
+            imagemSangue.gameObject.SetActive(false);
+        if (textoHorarioTransicao != null)
+            textoHorarioTransicao.gameObject.SetActive(false);
     }
 
-    Image CriarImagemTela(Transform pai, string nome, Color cor)
+    IEnumerator IniciarNoiteAposAbertura()
     {
-        GameObject objeto = new GameObject(nome, typeof(RectTransform), typeof(CanvasRenderer), typeof(Image));
-        objeto.transform.SetParent(pai, false);
+        if (textoAberturaNoite != null)
+        {
+            AplicarFonteFnaf(textoAberturaNoite);
+            textoAberturaNoite.text = $"12:00\nNoite {_noiteAtual}";
+        }
+        else
+        {
+            Debug.LogError("Vincule o texto '12:00 / Noite' do painel Abertura da Noite.", this);
+        }
 
-        RectTransform retangulo = objeto.GetComponent<RectTransform>();
-        retangulo.anchorMin = Vector2.zero;
-        retangulo.anchorMax = Vector2.one;
-        retangulo.offsetMin = Vector2.zero;
-        retangulo.offsetMax = Vector2.zero;
+        if (painelAberturaNoite != null)
+            painelAberturaNoite.SetActive(true);
 
-        Image imagem = objeto.GetComponent<Image>();
-        imagem.color = cor;
-        imagem.raycastTarget = false;
-        return imagem;
-    }
+        yield return FadePara(0f, duracaoFadeAberturaNoite);
+        yield return new WaitForSecondsRealtime(duracaoAberturaNoite);
+        yield return FadePara(1f, duracaoFadeAberturaNoite);
 
-    TextMeshProUGUI CriarTextoHorario(Transform pai)
-    {
-        GameObject objeto = new GameObject(
-            "Transição 5 AM - 6 AM",
-            typeof(RectTransform),
-            typeof(CanvasRenderer),
-            typeof(TextMeshProUGUI));
-        objeto.transform.SetParent(pai, false);
+        if (painelAberturaNoite != null)
+            painelAberturaNoite.SetActive(false);
 
-        RectTransform retangulo = objeto.GetComponent<RectTransform>();
-        retangulo.anchorMin = new Vector2(0.5f, 0.5f);
-        retangulo.anchorMax = new Vector2(0.5f, 0.5f);
-        retangulo.anchoredPosition = Vector2.zero;
-        retangulo.sizeDelta = new Vector2(600f, 150f);
-
-        TextMeshProUGUI texto = objeto.GetComponent<TextMeshProUGUI>();
-        texto.fontSize = 72f;
-        texto.color = Color.white;
-        texto.alignment = TextAlignmentOptions.Center;
-        texto.raycastTarget = false;
-        return texto;
+        yield return FadePara(0f, duracaoFadeAberturaNoite);
+        _noiteEmAbertura = false;
+        Time.timeScale = 1f;
+        TocarLoop(audioAmbiente, clipAmbiente);
+        TocarLoop(audioMusica, clipMusica);
     }
 
     void PrepararVisualJumpscare()
     {
-        if (_imagemTintVermelha != null)
+        if (imagemTintVermelha != null)
         {
-            _imagemTintVermelha.color = new Color(1f, 0f, 0f, intensidadeVermelha);
-            _imagemTintVermelha.gameObject.SetActive(true);
+            imagemTintVermelha.color = new Color(1f, 0f, 0f, intensidadeVermelha);
+            imagemTintVermelha.gameObject.SetActive(true);
         }
 
-        if (_imagemSangue != null)
+        if (imagemSangue != null)
         {
-            _imagemSangue.sprite = spriteSangue;
-            _imagemSangue.color = new Color(1f, 1f, 1f, opacidadeSangue);
-            _imagemSangue.gameObject.SetActive(true);
+            imagemSangue.sprite = spriteSangue;
+            imagemSangue.color = new Color(1f, 1f, 1f, opacidadeSangue);
+            imagemSangue.gameObject.SetActive(true);
         }
     }
 
     void LimparVisualTransicao()
     {
-        if (_imagemTintVermelha != null)
-            _imagemTintVermelha.gameObject.SetActive(false);
-        if (_imagemSangue != null)
-            _imagemSangue.gameObject.SetActive(false);
+        if (imagemTintVermelha != null)
+            imagemTintVermelha.gameObject.SetActive(false);
+        if (imagemSangue != null)
+            imagemSangue.gameObject.SetActive(false);
     }
 
     IEnumerator FadePara(float alphaDestino, float duracao)
     {
-        if (_imagemFade == null)
+        if (imagemFade == null)
             yield break;
 
-        _imagemFade.gameObject.SetActive(true);
-        float alphaInicial = _imagemFade.color.a;
+        imagemFade.gameObject.SetActive(true);
+        float alphaInicial = imagemFade.color.a;
         float tempo = 0f;
         float duracaoSegura = Mathf.Max(0.01f, duracao);
 
@@ -320,27 +424,27 @@ public class GameManager : MonoBehaviour
         {
             tempo += Time.unscaledDeltaTime;
             float alpha = Mathf.Lerp(alphaInicial, alphaDestino, Mathf.Clamp01(tempo / duracaoSegura));
-            _imagemFade.color = new Color(0f, 0f, 0f, alpha);
+            imagemFade.color = new Color(0f, 0f, 0f, alpha);
             yield return null;
         }
 
-        _imagemFade.color = new Color(0f, 0f, 0f, alphaDestino);
+        imagemFade.color = new Color(0f, 0f, 0f, alphaDestino);
     }
 
     IEnumerator MostrarVitoriaAposFade()
     {
-        if (_textoHorarioTransicao != null)
+        if (textoHorarioTransicao != null)
         {
-            _textoHorarioTransicao.text = "5 AM";
-            _textoHorarioTransicao.gameObject.SetActive(true);
+            textoHorarioTransicao.text = "5 AM";
+            textoHorarioTransicao.gameObject.SetActive(true);
         }
 
         yield return FadePara(1f, duracaoFadeVitoria);
-        if (_textoHorarioTransicao != null)
+        if (textoHorarioTransicao != null)
         {
-            _textoHorarioTransicao.text = "6 AM";
+            textoHorarioTransicao.text = "6 AM";
             yield return new WaitForSecondsRealtime(0.3f);
-            _textoHorarioTransicao.gameObject.SetActive(false);
+            textoHorarioTransicao.gameObject.SetActive(false);
         }
 
         if (painelVitoria != null)
@@ -622,6 +726,13 @@ public class GameManager : MonoBehaviour
         if (player.fusiveisColetados < fusiveisNecessarios)
             return;
 
+        int noiteDesbloqueada = Mathf.Min(_noiteAtual + 1, TotalNoites);
+        if (noiteDesbloqueada > GetSavedNight())
+        {
+            PlayerPrefs.SetInt(NoiteSalvaKey, noiteDesbloqueada);
+            PlayerPrefs.Save();
+        }
+
         Time.timeScale = 0f;
         PararAudiosDeFundo();
         if (painelGameOver != null)
@@ -651,6 +762,14 @@ public class GameManager : MonoBehaviour
         if (_transicaoPendente)
             return;
 
+        if (_pausado)
+        {
+            if (painelPause != null)
+                painelPause.SetActive(false);
+            _pausado = false;
+            AudioListener.pause = _audioListenerPausadoAntes;
+        }
+
         PararAudiosDeFundo();
         PararAudio(audioJumpscare);
         TocarSomUI();
@@ -669,20 +788,50 @@ public class GameManager : MonoBehaviour
             _noiteDaSessao = _noiteAtual;
         }
 
+        _ignorarMenuNaProximaCarga = true;
         CarregarCenaDeTransicao(SceneManager.GetActiveScene().name);
     }
 
     public static void IniciarNovaPartida()
     {
         _noiteDaSessao = 1;
+        _ignorarMenuNaProximaCarga = true;
         Time.timeScale = 1f;
         SceneManager.LoadScene("Gameplay");
+    }
+
+    public static void IniciarPartidaSalva()
+    {
+        _noiteDaSessao = GetSavedNight();
+        _ignorarMenuNaProximaCarga = true;
+        Time.timeScale = 1f;
+        SceneManager.LoadScene("Gameplay");
+    }
+
+    public static bool ConsumirIgnorarMenuNaProximaCarga()
+    {
+        bool ignorarMenu = _ignorarMenuNaProximaCarga;
+        _ignorarMenuNaProximaCarga = false;
+        return ignorarMenu;
+    }
+
+    public static int GetSavedNight()
+    {
+        return Mathf.Clamp(PlayerPrefs.GetInt(NoiteSalvaKey, 1), 1, TotalNoites);
     }
 
     public void VoltarAoMenu()
     {
         if (_transicaoPendente)
             return;
+
+        if (_pausado)
+        {
+            if (painelPause != null)
+                painelPause.SetActive(false);
+            _pausado = false;
+            AudioListener.pause = _audioListenerPausadoAntes;
+        }
 
         PararAudiosDeFundo();
         PararAudio(audioJumpscare);
@@ -720,57 +869,33 @@ public class GameManager : MonoBehaviour
 
     void AtualizarHud(int fusíveis = -1)
     {
-        if (textoProgresso == null)
-            return;
-
         if (fusíveis < 0)
         {
             playerController player = FindAnyObjectByType<playerController>();
             fusíveis = player != null ? player.fusiveisColetados : 0;
         }
 
-        int faltamColetar = Mathf.Max(0, fusiveisNecessarios - fusíveis);
-        textoProgresso.text =
-            $"Noite {_noiteAtual}/{TotalNoites}\n" +
-            $"Fusíveis coletados: {fusíveis}/{fusiveisNecessarios}\n" +
-            $"Faltam coletar: {faltamColetar}";
-    }
+        if (textoProgresso != null)
+        {
+            AplicarFonteFnaf(textoProgresso);
+            textoProgresso.text = $"Noite {_noiteAtual}";
+        }
 
-    void CriarHud()
-    {
-        GameObject canvasObject = new GameObject("HUD de Progresso", typeof(RectTransform), typeof(Canvas));
-        Canvas canvas = canvasObject.GetComponent<Canvas>();
-        canvas.renderMode = RenderMode.ScreenSpaceOverlay;
-        canvas.sortingOrder = 20;
-        canvasObject.AddComponent<CanvasScaler>();
-        canvasObject.AddComponent<GraphicRaycaster>();
+        if (iconesFusivelHUD == null)
+            return;
 
-        GameObject fundo = new GameObject("Fundo do Progresso", typeof(RectTransform), typeof(Image));
-        fundo.transform.SetParent(canvas.transform, false);
-        RectTransform fundoRect = fundo.GetComponent<RectTransform>();
-        fundoRect.anchorMin = new Vector2(0f, 1f);
-        fundoRect.anchorMax = new Vector2(0f, 1f);
-        fundoRect.pivot = new Vector2(0f, 1f);
-        fundoRect.anchoredPosition = new Vector2(20f, -20f);
-        fundoRect.sizeDelta = new Vector2(360f, 112f);
+        int fusiveisColetados = Mathf.Clamp(fusíveis, 0, fusiveisNecessarios);
+        for (int i = 0; i < iconesFusivelHUD.Length; i++)
+        {
+            Image icone = iconesFusivelHUD[i];
+            if (icone == null)
+                continue;
 
-        Image fundoImagem = fundo.GetComponent<Image>();
-        fundoImagem.color = new Color(0f, 0f, 0f, 0.65f);
-        fundoImagem.raycastTarget = false;
-
-        GameObject texto = new GameObject("Texto do Progresso", typeof(RectTransform), typeof(TextMeshProUGUI));
-        texto.transform.SetParent(fundo.transform, false);
-        RectTransform textoRect = texto.GetComponent<RectTransform>();
-        textoRect.anchorMin = Vector2.zero;
-        textoRect.anchorMax = Vector2.one;
-        textoRect.offsetMin = new Vector2(12f, 6f);
-        textoRect.offsetMax = new Vector2(-12f, -6f);
-
-        textoProgresso = texto.GetComponent<TextMeshProUGUI>();
-        textoProgresso.fontSize = 20f;
-        textoProgresso.color = Color.white;
-        textoProgresso.alignment = TextAlignmentOptions.TopLeft;
-        textoProgresso.raycastTarget = false;
+            bool necessarioNestaNoite = i < fusiveisNecessarios;
+            icone.gameObject.SetActive(necessarioNestaNoite);
+            if (necessarioNestaNoite)
+                icone.color = i < fusiveisColetados ? corFusivelAceso : corFusivelApagado;
+        }
     }
 
     void AtualizarTextoVitoria(string mensagem)
@@ -783,6 +908,7 @@ public class GameManager : MonoBehaviour
         {
             if (texto.GetComponentInParent<Button>() == null)
             {
+                AplicarFonteFnaf(texto);
                 texto.text = mensagem;
                 return;
             }
@@ -797,74 +923,51 @@ public class GameManager : MonoBehaviour
         Button botao = painelVitoria.GetComponentInChildren<Button>(true);
         TMP_Text texto = botao != null ? botao.GetComponentInChildren<TMP_Text>(true) : null;
         if (texto != null)
+        {
+            AplicarFonteFnaf(texto);
             texto.text = rotulo;
+        }
+    }
+
+    void AtualizarTextoBotaoGameOver()
+    {
+        if (painelGameOver == null)
+            return;
+
+        Button botao = painelGameOver.GetComponentInChildren<Button>(true);
+        TMP_Text texto = botao != null ? botao.GetComponentInChildren<TMP_Text>(true) : null;
+        if (texto == null)
+            return;
+
+        AplicarFonteFnaf(texto);
+        texto.text = "Retry";
+        texto.raycastTarget = false;
+    }
+
+    void AplicarFonteFnaf(TMP_Text texto)
+    {
+        if (texto == null)
+            return;
+
+        if (fonteFnaf == null || materialFonteFnaf == null)
+        {
+            Debug.LogError("Configure FNAF-Regular SDF e FNAF-Regular SDF Material no GameManager.", this);
+            return;
+        }
+
+        texto.font = fonteFnaf;
+        texto.fontSharedMaterial = materialFonteFnaf;
+        texto.raycastTarget = false;
     }
 
     void CriarBotaoVoltarAoMenu()
     {
-        if (botaoVoltarAoMenu != null || painelVitoria == null)
-            return;
-
-        Button botaoPrincipal = painelVitoria.GetComponentInChildren<Button>(true);
-        if (botaoPrincipal == null)
+        if (botaoVoltarAoMenu != null)
         {
-            Debug.LogError("O painel de vitória precisa de um botão para posicionar o botão do menu.", this);
+            botaoVoltarAoMenu.gameObject.SetActive(true);
             return;
         }
 
-        RectTransform retanguloPrincipal = botaoPrincipal.GetComponent<RectTransform>();
-        GameObject objetoBotao = new GameObject(
-            "BotaoVoltarAoMenu",
-            typeof(RectTransform),
-            typeof(CanvasRenderer),
-            typeof(Image),
-            typeof(Button));
-        objetoBotao.transform.SetParent(botaoPrincipal.transform.parent, false);
-
-        RectTransform retangulo = objetoBotao.GetComponent<RectTransform>();
-        retangulo.anchorMin = retanguloPrincipal.anchorMin;
-        retangulo.anchorMax = retanguloPrincipal.anchorMax;
-        retangulo.pivot = retanguloPrincipal.pivot;
-        retangulo.sizeDelta = retanguloPrincipal.sizeDelta;
-        retangulo.anchoredPosition = retanguloPrincipal.anchoredPosition + new Vector2(0f, -42f);
-
-        Image imagem = objetoBotao.GetComponent<Image>();
-        Image imagemPrincipal = botaoPrincipal.GetComponent<Image>();
-        if (imagemPrincipal != null)
-        {
-            imagem.sprite = imagemPrincipal.sprite;
-            imagem.type = imagemPrincipal.type;
-            imagem.color = imagemPrincipal.color;
-        }
-
-        botaoVoltarAoMenu = objetoBotao.GetComponent<Button>();
-        botaoVoltarAoMenu.targetGraphic = imagem;
-        botaoVoltarAoMenu.onClick.AddListener(VoltarAoMenu);
-
-        GameObject objetoTexto = new GameObject(
-            "Texto",
-            typeof(RectTransform),
-            typeof(CanvasRenderer),
-            typeof(TextMeshProUGUI));
-        objetoTexto.transform.SetParent(objetoBotao.transform, false);
-        RectTransform retanguloTexto = objetoTexto.GetComponent<RectTransform>();
-        retanguloTexto.anchorMin = Vector2.zero;
-        retanguloTexto.anchorMax = Vector2.one;
-        retanguloTexto.offsetMin = Vector2.zero;
-        retanguloTexto.offsetMax = Vector2.zero;
-
-        TextMeshProUGUI texto = objetoTexto.GetComponent<TextMeshProUGUI>();
-        TMP_Text textoPrincipal = botaoPrincipal.GetComponentInChildren<TMP_Text>(true);
-        if (textoPrincipal != null)
-        {
-            texto.font = textoPrincipal.font;
-            texto.fontSharedMaterial = textoPrincipal.fontSharedMaterial;
-            texto.fontSize = textoPrincipal.fontSize;
-            texto.color = textoPrincipal.color;
-            texto.alignment = textoPrincipal.alignment;
-            texto.fontStyle = textoPrincipal.fontStyle;
-        }
-        texto.text = "Voltar ao Menu";
-        texto.raycastTarget = false;
+        Debug.LogError("Vincule o botão Voltar ao Menu na Hierarchy da cena Gameplay.", this);
     }
 }
