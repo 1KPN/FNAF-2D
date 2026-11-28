@@ -1,0 +1,717 @@
+fileFormatVersion: 2
+guid: f3cd73250d5f36141bf3edf7e1b2add2
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 2230015763035451215
+    second: freddyFazbear_North_Corrected_0
+  - first:
+      213: -3025156475861430689
+    second: freddyFazbear_North_Corrected_1
+  - first:
+      213: 1818169743669568636
+    second: freddyFazbear_North_Corrected_2
+  - first:
+      213: 7278971354161299758
+    second: freddyFazbear_North_Corrected_3
+  - first:
+      213: 1756067021387366927
+    second: freddyFazbear_North_Corrected_4
+  - first:
+      213: -6819569981443741335
+    second: freddyFazbear_North_Corrected_5
+  - first:
+      213: -3159082564884749323
+    second: freddyFazbear_North_Corrected_6
+  - first:
+      213: -6816316514738113567
+    second: freddyFazbear_North_Corrected_7
+  - first:
+      213: -5047127382707487045
+    second: freddyFazbear_North_Corrected_8
+  - first:
+      213: -3591903773378193134
+    second: freddyFazbear_North_Corrected_9
+  - first:
+      213: 445756270175522156
+    second: freddyFazbear_North_Corrected_10
+  - first:
+      213: -2367617626131000853
+    second: freddyFazbear_North_Corrected_11
+  - first:
+      213: 1664223690472027976
+    second: freddyFazbear_North_Corrected_12
+  - first:
+      213: -7767335102001005408
+    second: freddyFazbear_North_Corrected_13
+  - first:
+      213: -5497353532404860064
+    second: freddyFazbear_North_Corrected_14
+  - first:
+      213: -5621903022884164569
+    second: freddyFazbear_North_Corrected_15
+  - first:
+      213: 3033155174058288258
+    second: freddyFazbear_North_Corrected_16
+  - first:
+      213: -5901938265640451551
+    second: freddyFazbear_North_Corrected_17
+  - first:
+      213: 5587255353981586852
+    second: freddyFazbear_North_Corrected_18
+  - first:
+      213: -475673409211026354
+    second: freddyFazbear_North_Corrected_19
+  - first:
+      213: -2356858729600794048
+    second: freddyFazbear_North_Corrected_20
+  - first:
+      213: -5849481012578029093
+    second: freddyFazbear_North_Corrected_21
+  - first:
+      213: 2520055294687122027
+    second: freddyFazbear_North_Corrected_22
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 75
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationMethod: 0
+  spriteTessellationDetail: -1
+  spriteGeometrySubdivision: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: freddyFazbear_North_Corrected_0
+      rect:
+        serializedVersion: 2
+        x: 44
+        y: 3
+        width: 215
+        height: 355
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f4fef37758b92fe10800000000000000
+      internalID: 2230015763035451215
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: freddyFazbear_North_Corrected_1
+      rect:
+        serializedVersion: 2
+        x: 281
+        y: 0
+        width: 295
+        height: 358
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f5e8e42963c7406d0800000000000000
+      internalID: -3025156475861430689
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: freddyFazbear_North_Corrected_2
+      rect:
+        serializedVersion: 2
+        x: 577
+        y: 11
+        width: 225
+        height: 347
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c74a9c0bfbf6b3910800000000000000
+      internalID: 1818169743669568636
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: freddyFazbear_North_Corrected_3
+      rect:
+        serializedVersion: 2
+        x: 820
+        y: 1
+        width: 251
+        height: 357
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e21470781e9140560800000000000000
+      internalID: 7278971354161299758
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: freddyFazbear_North_Corrected_4
+      rect:
+        serializedVersion: 2
+        x: 1086
+        y: 3
+        width: 248
+        height: 355
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f028293e6adce5810800000000000000
+      internalID: 1756067021387366927
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: freddyFazbear_North_Corrected_5
+      rect:
+        serializedVersion: 2
+        x: 1349
+        y: 1
+        width: 293
+        height: 357
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 969e027cb350c51a0800000000000000
+      internalID: -6819569981443741335
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: freddyFazbear_North_Corrected_6
+      rect:
+        serializedVersion: 2
+        x: 1652
+        y: 0
+        width: 229
+        height: 358
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5f32aef052fa824d0800000000000000
+      internalID: -3159082564884749323
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: freddyFazbear_North_Corrected_7
+      rect:
+        serializedVersion: 2
+        x: 1898
+        y: 13
+        width: 255
+        height: 345
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1e3f7668e349761a0800000000000000
+      internalID: -6816316514738113567
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: freddyFazbear_North_Corrected_8
+      rect:
+        serializedVersion: 2
+        x: 1906
+        y: 318
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bbeb291e26005f9b0800000000000000
+      internalID: -5047127382707487045
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: freddyFazbear_North_Corrected_9
+      rect:
+        serializedVersion: 2
+        x: 261
+        y: 278
+        width: 22
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 21958608c8ef62ec0800000000000000
+      internalID: -3591903773378193134
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: freddyFazbear_North_Corrected_10
+      rect:
+        serializedVersion: 2
+        x: 271
+        y: 299
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c6d073c47f4af2600800000000000000
+      internalID: 445756270175522156
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: freddyFazbear_North_Corrected_11
+      rect:
+        serializedVersion: 2
+        x: 280
+        y: 277
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: be1128e2058842fd0800000000000000
+      internalID: -2367617626131000853
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: freddyFazbear_North_Corrected_12
+      rect:
+        serializedVersion: 2
+        x: 1890
+        y: 285
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 847ff5901a2881710800000000000000
+      internalID: 1664223690472027976
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: freddyFazbear_North_Corrected_13
+      rect:
+        serializedVersion: 2
+        x: 1872
+        y: 218
+        width: 24
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0acbec9b0e1e43490800000000000000
+      internalID: -7767335102001005408
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: freddyFazbear_North_Corrected_14
+      rect:
+        serializedVersion: 2
+        x: 1351
+        y: 178
+        width: 14
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 06bf448a61a75b3b0800000000000000
+      internalID: -5497353532404860064
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: freddyFazbear_North_Corrected_15
+      rect:
+        serializedVersion: 2
+        x: 1365
+        y: 168
+        width: 8
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 72c6b4f9cfcfaf1b0800000000000000
+      internalID: -5621903022884164569
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: freddyFazbear_North_Corrected_16
+      rect:
+        serializedVersion: 2
+        x: 1371
+        y: 161
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 284e16a7f8ee71a20800000000000000
+      internalID: 3033155174058288258
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: freddyFazbear_North_Corrected_17
+      rect:
+        serializedVersion: 2
+        x: 1375
+        y: 159
+        width: 8
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 122473eca6a181ea0800000000000000
+      internalID: -5901938265640451551
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: freddyFazbear_North_Corrected_18
+      rect:
+        serializedVersion: 2
+        x: 812
+        y: 75
+        width: 6
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4adc873542be98d40800000000000000
+      internalID: 5587255353981586852
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: freddyFazbear_North_Corrected_19
+      rect:
+        serializedVersion: 2
+        x: 824
+        y: 89
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e44b0e6fd811669f0800000000000000
+      internalID: -475673409211026354
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: freddyFazbear_North_Corrected_20
+      rect:
+        serializedVersion: 2
+        x: 1888
+        y: 75
+        width: 12
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 042cd5cf871ca4fd0800000000000000
+      internalID: -2356858729600794048
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: freddyFazbear_North_Corrected_21
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 41
+        width: 13
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bd1f4ecc20872dea0800000000000000
+      internalID: -5849481012578029093
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: freddyFazbear_North_Corrected_22
+      rect:
+        serializedVersion: 2
+        x: 1577
+        y: 11
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b621b2e40f809f220800000000000000
+      internalID: 2520055294687122027
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      freddyFazbear_North_Corrected_0: 2230015763035451215
+      freddyFazbear_North_Corrected_1: -3025156475861430689
+      freddyFazbear_North_Corrected_10: 445756270175522156
+      freddyFazbear_North_Corrected_11: -2367617626131000853
+      freddyFazbear_North_Corrected_12: 1664223690472027976
+      freddyFazbear_North_Corrected_13: -7767335102001005408
+      freddyFazbear_North_Corrected_14: -5497353532404860064
+      freddyFazbear_North_Corrected_15: -5621903022884164569
+      freddyFazbear_North_Corrected_16: 3033155174058288258
+      freddyFazbear_North_Corrected_17: -5901938265640451551
+      freddyFazbear_North_Corrected_18: 5587255353981586852
+      freddyFazbear_North_Corrected_19: -475673409211026354
+      freddyFazbear_North_Corrected_2: 1818169743669568636
+      freddyFazbear_North_Corrected_20: -2356858729600794048
+      freddyFazbear_North_Corrected_21: -5849481012578029093
+      freddyFazbear_North_Corrected_22: 2520055294687122027
+      freddyFazbear_North_Corrected_3: 7278971354161299758
+      freddyFazbear_North_Corrected_4: 1756067021387366927
+      freddyFazbear_North_Corrected_5: -6819569981443741335
+      freddyFazbear_North_Corrected_6: -3159082564884749323
+      freddyFazbear_North_Corrected_7: -6816316514738113567
+      freddyFazbear_North_Corrected_8: -5047127382707487045
+      freddyFazbear_North_Corrected_9: -3591903773378193134
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

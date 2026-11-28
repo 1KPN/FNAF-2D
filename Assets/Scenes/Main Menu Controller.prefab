@@ -1,0 +1,72 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &6898608242270477845
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6992926221902624674}
+  - component: {fileID: 8952401005193270636}
+  m_Layer: 0
+  m_Name: Main Menu Controller
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6992926221902624674
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6898608242270477845}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8952401005193270636
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6898608242270477845}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6b9f1d13a0244d9b8cbcaac6893b74e1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::mainMenuUI
+  freddyTwitchingFrames:
+  - {fileID: -555873593984285211, guid: 00f9e40ab4d278b44949fd846548f870, type: 3}
+  - {fileID: 4963388652714578922, guid: ecc1be0e735ee2c45bdbead7c6fc2b02, type: 3}
+  - {fileID: -5938326253679453342, guid: 39bcc63d937dd2345933e020881f2aed, type: 3}
+  - {fileID: 5427875384904838254, guid: 6ee1da7b85ff1a947a3eae746157d0f7, type: 3}
+  staticFrames:
+  - {fileID: -558724747992300594, guid: 9a3624140aca72e419c56fa0a02e5e67, type: 3}
+  - {fileID: -718150107896010111, guid: f546708941275fe4090ba8efe3e6a407, type: 3}
+  - {fileID: 9179043214438271464, guid: fd5aab1584d839b43b20191b3928a10b, type: 3}
+  - {fileID: 483091036935920455, guid: 70e2945bf26e3a3409d23b86fbcd9fef, type: 3}
+  - {fileID: -6747921752564886037, guid: 2fa4f922303614643ba1b9065eee5eaa, type: 3}
+  - {fileID: -2786834236798427810, guid: 34aec8fa9e9c6eb4f9e468a625d06b51, type: 3}
+  - {fileID: 3583410616043510098, guid: 76c5663a12d686a4899f0d4d23ba170e, type: 3}
+  titleSprite: {fileID: 4369572136041557648, guid: c869e76c5ee836a47b7d8542762718c1, type: 3}
+  newspaperSprite: {fileID: 6879538022904502005, guid: 9e8bbbd59029a714da4f2b7d4aee3151, type: 3}
+  clipMusicaMenu: {fileID: 8300000, guid: c05ef78ac2bdd9f4995e1bd9b53e5280, type: 3}
+  menuFont: {fileID: 11400000, guid: 9f96e29b8dfd17d4595d4d004328174d, type: 2}
+  menuFontMaterial: {fileID: -7252411422063079126, guid: 9f96e29b8dfd17d4595d4d004328174d, type: 2}
+  imagemFreddy: {fileID: 0}
+  imagemStatic: {fileID: 0}
+  painelNewspaper: {fileID: 0}
+  imagemFade: {fileID: 0}
+  botaoNewGame: {fileID: 0}
+  botaoContinue: {fileID: 0}
+  textoContinue: {fileID: 0}
+  textoNoiteContinue: {fileID: 0}

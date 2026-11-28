@@ -3,10 +3,8 @@ using UnityEngine.InputSystem;
 
 public class generatorInteract : MonoBehaviour
 {
-    private bool _playerPerto = false;
-    private playerController _scriptDoPlayer;
-
-    [Header("Interface")]
+    private bool playerPerto = false;
+    private playerController scriptDoPlayer;
     public GameObject textoAviso;
 
     void Start()
@@ -16,9 +14,12 @@ public class generatorInteract : MonoBehaviour
 
     void Update()
     {
-        if (_playerPerto && Keyboard.current != null && Keyboard.current.eKey.wasPressedThisFrame)
+        if (GameManager.Instance != null && GameManager.Instance.JogoEncerrado)
+            return;
+
+        if (playerPerto && Keyboard.current != null && Keyboard.current.eKey.wasPressedThisFrame)
         {
-            DepositarFusivel();
+            DepositarFusiveis();
         }
     }
 
@@ -26,9 +27,8 @@ public class generatorInteract : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-            _playerPerto = true;
-            _scriptDoPlayer = collision.GetComponent<playerController>();
-            
+            playerPerto = true;
+            scriptDoPlayer = collision.GetComponent<playerController>();
             if (textoAviso != null) textoAviso.SetActive(true);
         }
     }
@@ -37,35 +37,20 @@ public class generatorInteract : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-            _playerPerto = false;
-            _scriptDoPlayer = null;
-            
+            playerPerto = false;
+            scriptDoPlayer = null;
             if (textoAviso != null) textoAviso.SetActive(false);
         }
     }
 
-    void DepositarFusivel()
+    void DepositarFusiveis()
     {
-        if (_scriptDoPlayer != null)
+        if (scriptDoPlayer != null && GameManager.Instance != null)
         {
-            int quantidadeNoBolso = _scriptDoPlayer.fusiveisColetados;
-
-            if (quantidadeNoBolso > 0)
+            GameManager.Instance.TocarSomGerador();
+            if (scriptDoPlayer.fusiveisColetados >= GameManager.Instance.fusiveisNecessarios)
             {
-                // Zera o bolso do jogador
-                _scriptDoPlayer.fusiveisColetados = 0; 
-                
-                // Manda a quantidade exata para o GameManager
-                if (GameManager.Instance != null)
-                {
-                    GameManager.Instance.RegistrarDeposito(quantidadeNoBolso);
-                }
-                
-                Debug.Log($"BZZZ! {quantidadeNoBolso} fusível(eis) depositado(s) de uma vez!");
-            }
-            else
-            {
-                Debug.Log("O gerador precisa de fusíveis! Você não tem nenhum no bolso.");
+                GameManager.Instance.ConcluirNoite(scriptDoPlayer);
             }
         }
     }

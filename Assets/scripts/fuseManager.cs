@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class fuseManager : MonoBehaviour
@@ -12,30 +13,74 @@ public class fuseManager : MonoBehaviour
 
     void Awake()
     {
-        if (Instance == null) Instance = this;
+        if (Instance != null && Instance != this)
+        {
+            Destroy(gameObject);
+            return;
+        }
+
+        Instance = this;
     }
 
     void Start()
     {
-        SpawnRandomFuse(); 
+        if (GameManager.Instance == null)
+        {
+            Debug.LogError("GameManager não encontrado; não é possível configurar a quantidade de fusíveis.", this);
+            return;
+        }
+
+        SpawnRandomFuse();
     }
 
     public void SpawnRandomFuse()
     {
-        if (GameManager.Instance != null && fusiveisJaSpawnados >= GameManager.Instance.fusiveisNecessarios)
+        if (GameManager.Instance == null)
+        {
+            Debug.LogError("GameManager não encontrado; não é possível gerar fusíveis.", this);
+            return;
+        }
+
+        if (fusiveisJaSpawnados >= GameManager.Instance.fusiveisNecessarios)
         {
             return;
         }
 
-        if (spawnPoints.Length == 0 || fusePrefab == null) return;
-
-        int randomIndex = Random.Range(0, spawnPoints.Length);
-
-        while (randomIndex == ultimoPontoIndex && spawnPoints.Length > 1)
+        if (fusePrefab == null)
         {
-            randomIndex = Random.Range(0, spawnPoints.Length);
+            Debug.LogError("Prefab de fusível não configurado no fuseManager.", this);
+            return;
         }
-        
+
+        if (spawnPoints == null || spawnPoints.Length == 0)
+        {
+            Debug.LogError("Nenhum ponto de spawn configurado no fuseManager.", this);
+            return;
+        }
+
+        List<int> pontosValidos = new List<int>();
+        for (int i = 0; i < spawnPoints.Length; i++)
+        {
+            if (spawnPoints[i] != null && i != ultimoPontoIndex)
+                pontosValidos.Add(i);
+        }
+
+        if (pontosValidos.Count == 0)
+        {
+            for (int i = 0; i < spawnPoints.Length; i++)
+            {
+                if (spawnPoints[i] != null)
+                    pontosValidos.Add(i);
+            }
+        }
+
+        if (pontosValidos.Count == 0)
+        {
+            Debug.LogError("Todos os pontos de spawn de fusíveis estão vazios.", this);
+            return;
+        }
+
+        int randomIndex = pontosValidos[Random.Range(0, pontosValidos.Count)];
         ultimoPontoIndex = randomIndex;
         Transform selectedPoint = spawnPoints[randomIndex];
 

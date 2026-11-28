@@ -16,6 +16,9 @@ public class fuseInteract : MonoBehaviour
 
     void Update()
     {
+        if (GameManager.Instance != null && GameManager.Instance.JogoEncerrado)
+            return;
+
         if (_playerPerto && Keyboard.current != null && Keyboard.current.eKey.wasPressedThisFrame)
         {
             Coletar();
@@ -48,7 +51,10 @@ void Coletar()
     {
         if (_scriptDoPlayer != null)
         {
-            _scriptDoPlayer.fusiveisColetados++;
+            if (GameManager.Instance != null)
+                GameManager.Instance.RegistrarFusivel(_scriptDoPlayer);
+            else
+                _scriptDoPlayer.fusiveisColetados++;
         }
         
         if (fuseManager.Instance != null)
