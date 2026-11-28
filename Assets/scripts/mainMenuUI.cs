@@ -16,6 +16,7 @@ public class mainMenuUI : MonoBehaviour
     [SerializeField] private Sprite[] staticFrames = new Sprite[7];
     [SerializeField] private Sprite titleSprite;
     [SerializeField] private Sprite newspaperSprite;
+    [SerializeField] private AudioClip clipMusicaMenu;
 
     [Header("Menu font")]
     [SerializeField] private TMP_FontAsset menuFont;
@@ -58,6 +59,24 @@ public class mainMenuUI : MonoBehaviour
 
     void Start()
     {
+        AudioSource audioMusicaMenu = GetComponent<AudioSource>();
+        if (audioMusicaMenu == null)
+            audioMusicaMenu = gameObject.AddComponent<AudioSource>();
+
+        if (clipMusicaMenu == null)
+        {
+            Debug.LogError("Configure darkness music.wav no Main Menu Controller.", this);
+        }
+        else
+        {
+            audioMusicaMenu.clip = clipMusicaMenu;
+            audioMusicaMenu.loop = true;
+            audioMusicaMenu.playOnAwake = false;
+            audioMusicaMenu.ignoreListenerPause = true;
+            audioMusicaMenu.volume = 0.3f;
+            audioMusicaMenu.Play();
+        }
+
         textoContinue.text = "Continue";
         textoNoiteContinue.text = $"Noite {GameManager.GetSavedNight()}";
         textoContinue.font = menuFont;
@@ -68,6 +87,7 @@ public class mainMenuUI : MonoBehaviour
         painelNewspaper.SetActive(false);
         EventSystem.current?.SetSelectedGameObject(botaoNewGame.gameObject);
         StartCoroutine(AnimateFreddy());
+        imagemStatic.enabled = true;
         StartCoroutine(AnimateStatic());
     }
 
@@ -208,7 +228,6 @@ public class mainMenuUI : MonoBehaviour
         {
             imagemStatic.sprite = staticFrames[frame];
             imagemStatic.color = new Color(1f, 1f, 1f, Random.Range(0.09f, 0.2f));
-            imagemStatic.enabled = Random.value > 0.04f;
             frame = (frame + 1) % staticFrames.Length;
             yield return new WaitForSecondsRealtime(StaticFrameDuration);
         }

@@ -20,6 +20,7 @@ public class GameManager : MonoBehaviour
     [Header("Painéis")]
     public GameObject painelGameOver;
     public GameObject painelVitoria;
+    [SerializeField] private GameObject painelZerado;
 
     [Header("Animatrônicos da cena")]
     public GameObject freddy;
@@ -63,6 +64,9 @@ public class GameManager : MonoBehaviour
     public AudioClip clipMultidaoNoiteConcluida;
     public AudioClip clipPassosPlayer;
     public AudioClip clipCorridaPlayer;
+    [SerializeField] private AudioClip clipAberturaNoite;
+    [SerializeField] private AudioClip[] clipsEventosNoturnos = new AudioClip[7];
+    [SerializeField] private AudioClip[] clipsPortasMadeira = new AudioClip[3];
 
     [Header("Transições visuais")]
     [SerializeField] private Sprite spriteSangue;
@@ -70,16 +74,22 @@ public class GameManager : MonoBehaviour
     [SerializeField] private Image imagemSangue;
     [SerializeField] private Image imagemFade;
     [SerializeField] private TextMeshProUGUI textoHorarioTransicao;
+    [SerializeField] private RectTransform janelaDigitoHorario;
+    [SerializeField] private RectTransform digitoCinco;
+    [SerializeField] private RectTransform digitoSeis;
     [SerializeField, Range(0f, 1f)] private float opacidadeSangue = 0.75f;
     [SerializeField, Range(0f, 1f)] private float intensidadeVermelha = 0.25f;
     [SerializeField, Min(0.01f)] private float duracaoFadeJumpscare = 0.16f;
     [SerializeField, Min(0.01f)] private float duracaoFadeVitoria = 0.3f;
+    [SerializeField, Min(0f)] private float duracaoAnimacaoVitoria = 7f;
+    [SerializeField, Min(0f)] private float duracaoEsperaAntesPainelVitoria = 12f;
+    [SerializeField, Min(0f)] private float duracaoFadePainelVitoria = 0.8f;
 
     [Header("Pause e abertura da noite")]
     [SerializeField] private GameObject painelPause;
     [SerializeField] private GameObject painelAberturaNoite;
     [SerializeField] private TextMeshProUGUI textoAberturaNoite;
-    [SerializeField, Min(0f)] private float duracaoAberturaNoite = 2f;
+    [SerializeField, Min(0f)] private float duracaoAberturaNoite = 4f;
     [SerializeField, Min(0.01f)] private float duracaoFadeAberturaNoite = 0.4f;
     [SerializeField] private Button botaoContinuarPause;
     [SerializeField] private Button botaoReiniciarPause;
@@ -114,6 +124,13 @@ public class GameManager : MonoBehaviour
     private static GameObject _audioConclusaoPersistente;
     private static AudioSource _audioSinalNoitePersistente;
     private static AudioSource _audioMultidaoNoitePersistente;
+    private AudioSource _audioEventosNoturnos;
+    private CanvasGroup _grupoPainelVitoria;
+    private GameObject _textoPainelVitoria;
+    private GameObject _botaoPainelVitoria;
+    private float _alturaDigitoHorario;
+    private Vector2 _posicaoInicialDigitoCinco;
+    private Vector2 _posicaoInicialDigitoSeis;
 
     public int NoiteAtual => _noiteAtual;
     public float MultiplicadorDificuldade => 1f + (_noiteAtual - 1) * aumentoDificuldadePorNoite;
@@ -145,12 +162,17 @@ public class GameManager : MonoBehaviour
         Time.timeScale = 1f;
         if (painelGameOver != null) painelGameOver.SetActive(false);
         if (painelVitoria != null) painelVitoria.SetActive(false);
+        if (painelZerado != null) painelZerado.SetActive(false);
         if (painelPause != null) painelPause.SetActive(false);
         if (painelAberturaNoite != null) painelAberturaNoite.SetActive(false);
         if (botaoVoltarAoMenu != null) botaoVoltarAoMenu.gameObject.SetActive(false);
         AtualizarTextoBotaoGameOver();
         if (visualJumpscare != null) visualJumpscare.SetActive(false);
         CriarCamadaTransicoes();
+        PrepararAnimacaoHorario();
+        if (botaoVoltarAoMenu != null && botaoVoltarAoMenu.onClick.GetPersistentEventCount() == 0)
+            botaoVoltarAoMenu.onClick.AddListener(VoltarAoMenu);
+        ConfigurarAudioPortas();
 
         if (textoProgresso == null)
             Debug.LogError("Configure o HUD da noite na cena Gameplay e vincule seu texto ao GameManager.", this);
@@ -248,6 +270,7 @@ public class GameManager : MonoBehaviour
         PararAudio(audioUI);
         PararAudio(audioGameplay);
         PararAudio(audioJumpscare);
+        PararAudio(_audioEventosNoturnos);
         if (Instance == this)
             Instance = null;
     }
@@ -259,12 +282,14 @@ public class GameManager : MonoBehaviour
         audioUI = PrepararAudioSource(audioUI);
         audioGameplay = PrepararAudioSource(audioGameplay);
         audioJumpscare = PrepararAudioSource(audioJumpscare);
+        _audioEventosNoturnos = PrepararAudioSource(_audioEventosNoturnos);
 
         audioAmbiente.volume = 0.3f;
         audioMusica.volume = 0.3f;
         audioUI.volume = 0.65f;
         audioGameplay.volume = 0.45f;
         audioJumpscare.volume = 0.9f;
+        _audioEventosNoturnos.volume = 0.35f;
         audioUI.ignoreListenerPause = true;
     }
 
@@ -369,6 +394,14 @@ public class GameManager : MonoBehaviour
             Debug.LogError("Vincule o texto '12:00 / Noite' do painel Abertura da Noite.", this);
         }
 
+        if (clipAberturaNoite != null)
+        {
+            TocarOneShot(audioUI, clipAberturaNoite);
+            yield return new WaitForSecondsRealtime(Mathf.Min(clipAberturaNoite.length, 0.12f));
+        }
+        else
+            Debug.LogError("Configure blip3.wav como clip de abertura da noite.", this);
+
         if (painelAberturaNoite != null)
             painelAberturaNoite.SetActive(true);
 
@@ -379,11 +412,66 @@ public class GameManager : MonoBehaviour
         if (painelAberturaNoite != null)
             painelAberturaNoite.SetActive(false);
 
+        if (clipAberturaNoite != null)
+            TocarOneShot(audioUI, clipAberturaNoite);
         yield return FadePara(0f, duracaoFadeAberturaNoite);
         _noiteEmAbertura = false;
         Time.timeScale = 1f;
         TocarLoop(audioAmbiente, clipAmbiente);
         TocarLoop(audioMusica, clipMusica);
+        StartCoroutine(TocarAudiosNoturnos());
+    }
+
+    void ConfigurarAudioPortas()
+    {
+        if (clipsPortasMadeira == null || clipsPortasMadeira.Length == 0)
+        {
+            Debug.LogError("Configure door2a.wav, door2b.wav e door2c.wav como sons das portas de madeira.", this);
+            return;
+        }
+
+        foreach (GameObject objeto in FindObjectsByType<GameObject>(FindObjectsInactive.Include))
+        {
+            if (!objeto.name.StartsWith("door", System.StringComparison.OrdinalIgnoreCase)
+                || objeto.name.Equals("door_1 (cozinha)", System.StringComparison.OrdinalIgnoreCase))
+                continue;
+
+            DoorAudioRandomizer audioPorta = objeto.GetComponent<DoorAudioRandomizer>();
+            if (audioPorta == null)
+                audioPorta = objeto.AddComponent<DoorAudioRandomizer>();
+            audioPorta.Configurar(clipsPortasMadeira);
+        }
+    }
+
+    IEnumerator TocarAudiosNoturnos()
+    {
+        while (_estado == EstadoJogo.EmAndamento)
+        {
+            yield return new WaitForSeconds(Random.Range(18f, 36f));
+            if (_estado != EstadoJogo.EmAndamento)
+                yield break;
+
+            if (Random.value > 0.45f || _audioEventosNoturnos == null)
+                continue;
+
+            if (clipsEventosNoturnos == null || clipsEventosNoturnos.Length == 0)
+            {
+                Debug.LogError("Configure os áudios ambiente opcionais da noite.", this);
+                yield break;
+            }
+
+            AudioClip clip = clipsEventosNoturnos[Random.Range(0, clipsEventosNoturnos.Length)];
+            if (clip == null)
+            {
+                Debug.LogError("Há um áudio noturno não configurado no GameManager.", this);
+                continue;
+            }
+
+            _audioEventosNoturnos.clip = clip;
+            _audioEventosNoturnos.loop = false;
+            _audioEventosNoturnos.Play();
+            yield return new WaitForSeconds(clip.length);
+        }
     }
 
     void PrepararVisualJumpscare()
@@ -433,23 +521,165 @@ public class GameManager : MonoBehaviour
 
     IEnumerator MostrarVitoriaAposFade()
     {
-        if (textoHorarioTransicao != null)
-        {
-            textoHorarioTransicao.text = "5 AM";
-            textoHorarioTransicao.gameObject.SetActive(true);
-        }
-
-        yield return FadePara(1f, duracaoFadeVitoria);
-        if (textoHorarioTransicao != null)
-        {
-            textoHorarioTransicao.text = "6 AM";
-            yield return new WaitForSecondsRealtime(0.3f);
-            textoHorarioTransicao.gameObject.SetActive(false);
-        }
+        float inicioSequencia = Time.unscaledTime;
+        bool animacaoHorarioConfigurada = janelaDigitoHorario != null
+            && digitoCinco != null && digitoSeis != null;
+        OcultarHudGameplay();
 
         if (painelVitoria != null)
+        {
+            PrepararPainelVitoria();
             painelVitoria.SetActive(true);
+            DefinirConteudoPainelVitoria(false);
+        }
+        if (animacaoHorarioConfigurada)
+            janelaDigitoHorario.gameObject.SetActive(true);
+        if (textoHorarioTransicao != null)
+            textoHorarioTransicao.gameObject.SetActive(true);
+
+        yield return FadePara(1f, duracaoFadeVitoria);
+        if (animacaoHorarioConfigurada)
+            yield return AnimarViradaHorario();
+        else if (textoHorarioTransicao != null)
+            yield return new WaitForSecondsRealtime(0.3f);
+
+        float tempoRestante = duracaoEsperaAntesPainelVitoria - (Time.unscaledTime - inicioSequencia);
+        if (tempoRestante > 0f)
+            yield return new WaitForSecondsRealtime(tempoRestante);
+
+        if (textoHorarioTransicao != null)
+            textoHorarioTransicao.gameObject.SetActive(false);
+        if (animacaoHorarioConfigurada)
+            janelaDigitoHorario.gameObject.SetActive(false);
+
+        if (_estado == EstadoJogo.JogoConcluido)
+        {
+            if (painelVitoria != null)
+                painelVitoria.SetActive(false);
+            DefinirConteudoPainelVitoria(true);
+            if (painelZerado == null)
+                Debug.LogError("Vincule o painelZerado com end.png na cena Gameplay.", this);
+            else
+                painelZerado.SetActive(true);
+            if (botaoVoltarAoMenu != null)
+                botaoVoltarAoMenu.gameObject.SetActive(true);
+        }
+        else if (painelVitoria != null)
+        {
+            DefinirConteudoPainelVitoria(true);
+            _grupoPainelVitoria.alpha = 0f;
+            _grupoPainelVitoria.interactable = false;
+            _grupoPainelVitoria.blocksRaycasts = false;
+            StartCoroutine(FadeGrupoPainelVitoria());
+        }
+
         yield return FadePara(0f, duracaoFadeVitoria);
+    }
+
+    void PrepararPainelVitoria()
+    {
+        if (_grupoPainelVitoria == null)
+            _grupoPainelVitoria = painelVitoria.GetComponent<CanvasGroup>();
+        if (_grupoPainelVitoria == null)
+            _grupoPainelVitoria = painelVitoria.AddComponent<CanvasGroup>();
+        _grupoPainelVitoria.alpha = 1f;
+        _grupoPainelVitoria.interactable = false;
+        _grupoPainelVitoria.blocksRaycasts = false;
+
+        Transform texto = painelVitoria.transform.Find("Text");
+        Transform botao = painelVitoria.transform.Find("Button");
+        if (texto == null || botao == null)
+        {
+            Debug.LogError("O painelVitória precisa conter os objetos Text e Button.", painelVitoria);
+            return;
+        }
+
+        _textoPainelVitoria = texto.gameObject;
+        _botaoPainelVitoria = botao.gameObject;
+    }
+
+    void DefinirConteudoPainelVitoria(bool ativo)
+    {
+        if (_textoPainelVitoria != null)
+            _textoPainelVitoria.SetActive(ativo);
+        if (_botaoPainelVitoria != null)
+            _botaoPainelVitoria.SetActive(ativo);
+    }
+
+    IEnumerator FadeGrupoPainelVitoria()
+    {
+        float tempo = 0f;
+        float duracao = Mathf.Max(0.01f, duracaoFadePainelVitoria);
+        while (tempo < duracao)
+        {
+            tempo += Time.unscaledDeltaTime;
+            _grupoPainelVitoria.alpha = Mathf.Clamp01(tempo / duracao);
+            yield return null;
+        }
+
+        _grupoPainelVitoria.alpha = 1f;
+        _grupoPainelVitoria.interactable = true;
+        _grupoPainelVitoria.blocksRaycasts = true;
+    }
+
+    void OcultarHudGameplay()
+    {
+        if (textoProgresso != null)
+            textoProgresso.gameObject.SetActive(false);
+
+        if (iconesFusivelHUD != null && iconesFusivelHUD.Length > 0
+            && iconesFusivelHUD[0] != null && iconesFusivelHUD[0].transform.parent != null)
+        {
+            iconesFusivelHUD[0].transform.parent.gameObject.SetActive(false);
+        }
+    }
+
+    void PrepararAnimacaoHorario()
+    {
+        if (textoHorarioTransicao == null || janelaDigitoHorario == null
+            || digitoCinco == null || digitoSeis == null)
+        {
+            Debug.LogError(
+                "Vincule AM, Janela do Digito do Horario, Hora 5 e Hora 6 na Hierarchy da Gameplay.",
+                this);
+            return;
+        }
+
+        _alturaDigitoHorario = janelaDigitoHorario.rect.height;
+        if (_alturaDigitoHorario <= 0f)
+        {
+            Debug.LogError("A Janela do Digito do Horario precisa ter altura maior que zero.", janelaDigitoHorario);
+            return;
+        }
+
+        _posicaoInicialDigitoCinco = digitoCinco.anchoredPosition;
+        _posicaoInicialDigitoSeis = digitoSeis.anchoredPosition;
+        janelaDigitoHorario.gameObject.SetActive(false);
+        digitoCinco.gameObject.SetActive(false);
+        digitoSeis.gameObject.SetActive(false);
+    }
+
+    IEnumerator AnimarViradaHorario()
+    {
+        float duracao = Mathf.Max(0f, duracaoAnimacaoVitoria);
+        float tempo = 0f;
+        digitoCinco.gameObject.SetActive(true);
+        digitoSeis.gameObject.SetActive(true);
+
+        while (tempo < duracao)
+        {
+            tempo += Time.unscaledDeltaTime;
+            float progresso = duracao <= 0f ? 1f : Mathf.Clamp01(tempo / duracao);
+            digitoCinco.anchoredPosition = _posicaoInicialDigitoCinco
+                + new Vector2(0f, _alturaDigitoHorario * progresso);
+            digitoSeis.anchoredPosition = _posicaoInicialDigitoSeis
+                + new Vector2(0f, _alturaDigitoHorario * (progresso - 1f));
+            yield return null;
+        }
+
+        digitoCinco.anchoredPosition = _posicaoInicialDigitoCinco
+            + new Vector2(0f, _alturaDigitoHorario);
+        digitoSeis.anchoredPosition = _posicaoInicialDigitoSeis;
     }
 
     void TocarSequenciaConclusaoNoite()
@@ -696,9 +926,18 @@ public class GameManager : MonoBehaviour
         _estado = EstadoJogo.GameOver;
         if (painelVitoria != null)
             painelVitoria.SetActive(false);
+        OcultarHudGameplay();
         if (painelGameOver != null)
             painelGameOver.SetActive(true);
-        TocarOneShot(audioUI, clipGameOver);
+        if (audioUI != null && clipGameOver != null)
+        {
+            audioUI.Stop();
+            audioUI.PlayOneShot(clipGameOver);
+        }
+        else if (clipGameOver == null)
+        {
+            Debug.LogError("Configure static2.wav como clip de Game Over.", this);
+        }
         Time.timeScale = 0f;
         StartCoroutine(FadePara(0f, duracaoFadeJumpscare));
     }
@@ -741,16 +980,10 @@ public class GameManager : MonoBehaviour
         if (_noiteAtual < TotalNoites)
         {
             _estado = EstadoJogo.ProximaNoite;
-            AtualizarTextoVitoria(
-                $"6 AM\nNoite {_noiteAtual} concluída! Prepare-se para a noite {_noiteAtual + 1}.");
-            AtualizarTextoBotaoVitoria("Próxima noite");
         }
         else
         {
             _estado = EstadoJogo.JogoConcluido;
-            AtualizarTextoVitoria("6 AM\nParabéns! Você zerou as cinco noites.");
-            AtualizarTextoBotaoVitoria("Jogar da Noite 1");
-            CriarBotaoVoltarAoMenu();
         }
 
         TocarSequenciaConclusaoNoite();
@@ -898,37 +1131,6 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    void AtualizarTextoVitoria(string mensagem)
-    {
-        if (painelVitoria == null)
-            return;
-
-        TMP_Text[] textos = painelVitoria.GetComponentsInChildren<TMP_Text>(true);
-        foreach (TMP_Text texto in textos)
-        {
-            if (texto.GetComponentInParent<Button>() == null)
-            {
-                AplicarFonteFnaf(texto);
-                texto.text = mensagem;
-                return;
-            }
-        }
-    }
-
-    void AtualizarTextoBotaoVitoria(string rotulo)
-    {
-        if (painelVitoria == null)
-            return;
-
-        Button botao = painelVitoria.GetComponentInChildren<Button>(true);
-        TMP_Text texto = botao != null ? botao.GetComponentInChildren<TMP_Text>(true) : null;
-        if (texto != null)
-        {
-            AplicarFonteFnaf(texto);
-            texto.text = rotulo;
-        }
-    }
-
     void AtualizarTextoBotaoGameOver()
     {
         if (painelGameOver == null)
@@ -960,14 +1162,4 @@ public class GameManager : MonoBehaviour
         texto.raycastTarget = false;
     }
 
-    void CriarBotaoVoltarAoMenu()
-    {
-        if (botaoVoltarAoMenu != null)
-        {
-            botaoVoltarAoMenu.gameObject.SetActive(true);
-            return;
-        }
-
-        Debug.LogError("Vincule o botão Voltar ao Menu na Hierarchy da cena Gameplay.", this);
-    }
 }
